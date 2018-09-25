@@ -2,6 +2,26 @@
 
 ### Perfil: Usuário
 
+##### Fazer primeiro cadastro   
+Como um usuário não cadastrado  
+Para que eu possa fazer uso da aplicação  
+Eu desejo me cadastrar no PensionApp  
+
+##### Fazer Login
+Como um usuário já cadastrado  
+Para que eu possa acessar a aplicação  
+Eu quero poder logar no PensionApp com um email e senha  
+
+##### Cadatro de usuário como proprietário
+Como um usuário não cadastrado  
+Para que eu possa gerir minha propriedade  
+Eu desejo me cadastrar com o perfil de proprietario  
+
+##### Aceitar Convite
+Como um usuário não cadastrado  
+Para ser aceito como membro de uma moradia  
+Eu quero me cadastrar com o perfil de inquilino  
+
 ### Perfil: Inquilino
 
 ##### Acessar o Quadro de Avisos  
@@ -9,13 +29,18 @@ Como um inquilino
 Para que eu possa saber de novos avisos  
 Eu desejo ver o quadro de avisos  
 
+##### Inserir mensagens no Quadro de Avisos
+Como um inquilino  
+Para que eu possa fazer comunicados aos outros usuários da aplicação  
+Eu desejo inserir mensagens no quadro de avisos  
+
 ##### Usar o chat
 Como um inquilino  
-Para que eu possa me comunicar com outro usuario  
-Eu quero conversar com outro inquilino atraves do chat  
+Para que eu possa me comunicar com outro usuário  
+Eu quero conversar com outro inquilino através do chat  
 
 ##### Abrir chamado de Manutenção
-Como um inquilino   
+Como um inquilino  
 Para que uma manutenção seja feita  
 Eu quero abrir um chamado de manutenção  
 
@@ -26,7 +51,7 @@ Eu quero adicionar uma Tarefa
 
 ##### Delegar Tarefa
 Como um inquilino  
-Para que uma tarefa adiquira um responsavel  
+Para que uma tarefa adquira um responsável  
 Eu quero delegar uma tarefa do quadro de avisos a outro inquilino  
 
 ##### Concluir Tarefa
@@ -38,18 +63,18 @@ Eu quero marcar uma tarefa como realizada
 
 ##### Adicionar Propriedade
 Como um proprietário  
-Para que eu possa ter mais uma propriedade cadastrada  
-Eu quero Cadastrar um nova propriedade  
+Para que eu possa ter mais uma moradia cadastrada  
+Eu quero Cadastrar um nova moradia  
 
 ##### Editar Propriedade
 Como um proprietário  
-Para que eu possa fazer alterações na propriedade  
+Para que eu possa fazer alterações na moradia  
 Eu quero editar as propriedades já cadastradas  
 
 ##### Excluir Propriedade
 Como um proprietário  
-Para que eu possa desvincular um imóvel  
-Eu quero excluir uma propriedade  
+Para que eu possa desvincular um imóvel 
+Eu quero excluir uma moradia  
 
 ##### Ver Chamado de Manutenção
 Como um proprietario  
@@ -76,23 +101,23 @@ Como um proprietário
 Para que eu possa retirar um inquilino  
 Eu quero poder excluir inquilinos  
 
-##### Lista de Funcionarios
+##### Lista de Funcionários
 Como um proprietário  
-Para que eu possa acessar as informações dos funcionarios  
+Para que eu possa acessar as informações dos funcionários  
 Eu quero acessar a lista com os funcionarios  
 
 ##### Cadastrar Fucionario
 Como um proprietário  
-Para que eu possa ter uma lista atualizada dos funcionarios  
+Para que eu possa ter uma lista atualizada dos funcionários  
 Eu quero cadastrar funcionarios novos  
 
 ##### Editar Funcionario
 Como um proprietário  
-Para que eu possa ter uma lista atualizada dos funcionarios  
-Eu quero editar os dados dos funcionarios se necessario  
+Para que eu possa ter uma lista atualizada dos funcionários  
+Eu quero editar os dados dos funcionários se necessário  
 
-##### Excluir Funcionario
+##### Excluir Funcionário
 Como um proprietário  
-Para que eu possa ter uma lista atualizada dos funcionarios  
-Eu quero excluir funcionarios que não fazem mais parte de uma propriedade  
+Para que eu possa ter uma lista atualizada dos funcionários  
+Eu quero excluir funcionários que não fazem mais parte de uma moradia  
 
