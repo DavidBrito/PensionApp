@@ -24,7 +24,7 @@ Eu quero me cadastrar com o perfil de inquilino
 
 ##### Usar o chat
 Como um usuário já cadastrado  
-Para que eu possa me comunicar diretamente com outro usuário
+Para que eu possa me comunicar diretamente com outro usuário  
 Eu quero conversar através do chat  
 
 ### Perfil: Inquilino
@@ -41,7 +41,7 @@ Eu desejo inserir mensagens no quadro de avisos
 
 ##### Excluir mensagens no Quadro de Avisos
 Como um inquilino  
-Para que eu possa apagar comunicados postados por mim
+Para que eu possa apagar comunicados postados por mim  
 Eu desejo deletar mensagens no quadro de avisos  
 
 ##### Abrir chamado de Manutenção
@@ -51,7 +51,7 @@ Eu quero abrir um chamado de manutenção
 
 ##### Visualizar Chamado de Manutenção
 Como um inquilino  
-Para que eu possa ver chamados de manutenção criados por mim
+Para que eu possa ver chamados de manutenção criados por mim  
 Eu quero ter acesso a lista de Chamados enviados  
 
 ##### Criar Tarefa
@@ -93,7 +93,7 @@ Eu quero Cadastrar um novo quarto
 
 ##### Editar Quarto
 Como um proprietário  
-Para que eu possa alterar dados de um quarto 
+Para que eu possa alterar dados de um quarto  
 Eu quero editar os quartos já inseridos no sistema  
 
 ##### Excluir Quarto
@@ -113,8 +113,8 @@ Eu quero responder as solicitações de Manutenção
 
 ##### Concluir Chamado de Manutenção
 Como um proprietário  
-Para sinalizar que a manutenção solicitada já foi atendida
-Eu quero marcar o Chamado de Manutenção como realizado 
+Para sinalizar que a manutenção solicitada já foi atendida  
+Eu quero marcar o Chamado de Manutenção como realizado  
 
 ##### Enviar Convite
 Como um proprietário  
