@@ -1,4 +1,7 @@
-Perfil: Inquilino
+##### História de usuário
+
+### Perfil: Inquilino
+
 Acessar o Quadro de Avisos
 Como um inquilino
 Para que eu possa saber de novos avisos
@@ -29,7 +32,8 @@ Como um inquilino
 Para que uma tarefa saia do Quadro de Tarefas
 Eu quero marcar uma tarefa como realizada
 
-Perfil: Proprietario
+### Perfil: Proprietario
+
 Adicionar Propriedade
 Como um proprietario
 Para que eu possa ter mais uma propriedade cadastrada
@@ -51,42 +55,42 @@ Para que eu possa lidar com as manutenções que venham a ocorrer
 Eu quero ter acesso a lista de manutenções
 
 Responder Chamdado de Manutenção
-Como um proprietario
+Como um proprietário
 Para que eu possa dar um retorno aos inquilinos sobre os Chamados de Manutenção
 Eu quero responder as solicitações de Manutenção
 
 Perfil: Administrador
 Enviar Convite
-Como um administrador
+Como um proprietário
 Para que um usuario possa ser vinculado a uma propriedade
 Eu quero mandar um convite para qualquer usuario
 
 Editar Inquilino
-Como um administrador
+Como um proprietário
 Para que eu possa editar os dados de um inquilino
 Eu quero editar as informações dos inquilinos
 
 Excluir Inquilino
-Como um administrador
+Como um proprietário
 Para que eu possa retirar um inquilino
 Eu quero poder excluir inquilinos
 
 Lista de Funcionarios
-Como um administrador
+Como um proprietário
 Para que eu possa acessar as informações dos funcionarios
 Eu quero acessar a lista com os funcionarios
 
 Cadastrar Fucionario
-Como um administrador
+Como um proprietário
 Para que eu possa ter uma lista atualizada dos funcionarios
 Eu quero cadastrar funcionarios novos
 
 Editar Funcionario
-Como um administrador
+Como um proprietário
 Para que eu possa ter uma lista atualizada dos funcionarios
 Eu quero editar os dados dos funcionarios se necessario
 
 Excluir Funcionario
-Como um administrador
+Como um proprietário
 Para que eu possa ter uma lista atualizada dos funcionarios
 Eu quero excluir funcionarios que não fazem mais parte de uma propriedade
