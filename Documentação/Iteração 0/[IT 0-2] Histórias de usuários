@@ -1,3 +1,4 @@
+Perfil: Inquilino
 Acessar o Quadro de Avisos
 Como um inquilino
 Para que eu possa saber de novos avisos
@@ -28,6 +29,7 @@ Como um inquilino
 Para que uma tarefa saia do Quadro de Tarefas
 Eu quero marcar uma tarefa como realizada
 
+Perfil: Proprietario
 Adicionar Propriedade
 Como um proprietario
 Para que eu possa ter mais uma propriedade cadastrada
@@ -53,6 +55,7 @@ Como um proprietario
 Para que eu possa dar um retorno aos inquilinos sobre os Chamados de Manutenção
 Eu quero responder as solicitações de Manutenção
 
+Perfil: Administrador
 Enviar Convite
 Como um administrador
 Para que um usuario possa ser vinculado a uma propriedade
