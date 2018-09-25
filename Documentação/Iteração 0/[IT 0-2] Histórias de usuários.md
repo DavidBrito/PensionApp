@@ -1,6 +1,8 @@
-##### História de usuário
+### História de usuário
 
-### Perfil: Inquilino
+##### Perfil: Usuário
+
+##### Perfil: Inquilino
 
 Acessar o Quadro de Avisos
 Como um inquilino
@@ -32,7 +34,7 @@ Como um inquilino
 Para que uma tarefa saia do Quadro de Tarefas
 Eu quero marcar uma tarefa como realizada
 
-### Perfil: Proprietario
+##### Perfil: Proprietario
 
 Adicionar Propriedade
 Como um proprietario
@@ -46,7 +48,7 @@ Eu quero editar as propriedades já cadastradas
 
 Excluir Propriedade
 Como um proprietario
-Para que eu possa desvincular um imovel
+Para que eu possa desvincular um imóvel
 Eu quero excluir uma propriedade
 
 Ver Chamado de Manutenção
@@ -59,7 +61,6 @@ Como um proprietário
 Para que eu possa dar um retorno aos inquilinos sobre os Chamados de Manutenção
 Eu quero responder as solicitações de Manutenção
 
-Perfil: Administrador
 Enviar Convite
 Como um proprietário
 Para que um usuario possa ser vinculado a uma propriedade
@@ -94,3 +95,4 @@ Excluir Funcionario
 Como um proprietário
 Para que eu possa ter uma lista atualizada dos funcionarios
 Eu quero excluir funcionarios que não fazem mais parte de uma propriedade
+
