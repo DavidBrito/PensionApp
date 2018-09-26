@@ -12,7 +12,7 @@ Como um usuário já cadastrado
 Para que eu possa acessar a aplicação  
 Eu quero poder logar no PensionApp com um email e senha  
 
-##### Cadatro de usuário como proprietário
+##### Cadastro de usuário como proprietário
 Como um usuário não cadastrado  
 Para que eu possa gerir minha propriedade  
 Eu desejo me cadastrar com o perfil de proprietario  
@@ -21,6 +21,11 @@ Eu desejo me cadastrar com o perfil de proprietario
 Como um usuário não cadastrado  
 Para ser aceito como membro de uma moradia  
 Eu quero me cadastrar com o perfil de inquilino  
+
+##### Usar o chat
+Como um usuário já cadastrado  
+Para que eu possa me comunicar diretamente com outro usuário  
+Eu quero conversar através do chat  
 
 ### Perfil: Inquilino
 
@@ -34,15 +39,20 @@ Como um inquilino
 Para que eu possa fazer comunicados aos outros usuários da aplicação  
 Eu desejo inserir mensagens no quadro de avisos  
 
-##### Usar o chat
+##### Excluir mensagens no Quadro de Avisos
 Como um inquilino  
-Para que eu possa me comunicar com outro usuário  
-Eu quero conversar com outro inquilino através do chat  
+Para que eu possa apagar comunicados postados por mim  
+Eu desejo deletar mensagens no quadro de avisos  
 
 ##### Abrir chamado de Manutenção
 Como um inquilino  
 Para que uma manutenção seja feita  
-Eu quero abrir um chamado de manutenção  
+Eu quero abrir um chamado de manutenção
+
+##### Visualizar Chamado de Manutenção
+Como um inquilino  
+Para que eu possa ver chamados de manutenção criados por mim  
+Eu quero ter acesso a lista de Chamados enviados  
 
 ##### Criar Tarefa
 Como um inquilino  
@@ -76,6 +86,21 @@ Como um proprietário
 Para que eu possa desvincular um imóvel 
 Eu quero excluir uma moradia  
 
+##### Adicionar Quarto
+Como um proprietário  
+Para que eu possa incluir os quartos da moradia
+Eu quero Cadastrar um novo quarto
+
+##### Editar Quarto
+Como um proprietário  
+Para que eu possa alterar dados de um quarto  
+Eu quero editar os quartos já inseridos no sistema  
+
+##### Excluir Quarto
+Como um proprietário  
+Para que eu possa desassociar um quarto da moradia  
+Eu quero excluir um quarto  
+
 ##### Ver Chamado de Manutenção
 Como um proprietario  
 Para que eu possa lidar com as manutenções que venham a ocorrer  
@@ -85,6 +110,11 @@ Eu quero ter acesso a lista de manutenções
 Como um proprietário  
 Para que eu possa dar um retorno aos inquilinos sobre os Chamados de Manutenção  
 Eu quero responder as solicitações de Manutenção  
+
+##### Concluir Chamado de Manutenção
+Como um proprietário  
+Para sinalizar que a manutenção solicitada já foi atendida  
+Eu quero marcar o Chamado de Manutenção como realizado  
 
 ##### Enviar Convite
 Como um proprietário  
