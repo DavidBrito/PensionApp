@@ -1,0 +1,2 @@
+module BoasVindasHelper
+end
