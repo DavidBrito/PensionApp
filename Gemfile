@@ -9,6 +9,13 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'devise'
+gem 'bootstrap-sass', '~> 3.3'
+
+group :test do
+  gem 'cucumber', '~> 3.1.0'
+  gem 'rspec', '~> 3.7.0'
+end
 
 group :development, :test do
   gem 'byebug'
