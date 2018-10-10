@@ -1,0 +1,47 @@
+Feature: fazer primeiro cadastro  
+	O usuário chegará a esta página se quiser se cadastrar como proprietário ou inquilino.  
+
+Background:  
+	Given usuário está na página de cadastro
+
+Scenario: usuário quer fazer cadastro como proprietário, e consegue
+	Given usuário seleciona cadastro de proprietário
+	When clica botão para proprietários
+	And insere nome "Joao da Silva"
+	And insere cpf "11122233345"
+	And insere telefone "998765432"
+	When clica botão finalizar cadastro
+    Then deve redirecionar para paágina inicial da aplicação
+    And mostrar mensagem de sucesso no topo da página
+
+Scenario: usuário quer fazer cadastro como proprietário, mas falha  
+	Given usuário seleciona cadastro de proprietário  
+	When clica botão para proprietários  
+	And insere <nome>  
+	And insere <cpf>  
+	And insere <telefone>  
+	When clica botão finalizar cadastro  
+	Then deve recarregar página de cadastro de proprietário  
+	And exibir mensagem de erro no topo da página  
+	And mostrar campos onde há erro  
+
+Scenario: usuário quer fazer cadastro como inquilino, e possui número de convite válido  
+	Given usuário seleciona cadastro de inquilino  
+	When clica botão para inquilino  
+	And insere número de convite  
+	And número de convite é válido  
+	When clica botão para inserir dados pessoais  
+	And insere nome "Joao da Silva"  
+	And insere cpf "11122233345"  
+	And insere telefone "998765432"  
+	Then deve redirecionar para página inicial da aplicação  
+	And mostrar mensagem de sucesso no topo da página  
+
+Scenario: usuário quer fazer cadastro como inquilino, mas possui número de convite inválido  
+	Given usuário seleciona cadastro de inquilino  
+	When clica botão para inquilino  
+	And insere número de convite  
+	But número de convite não é válido  
+	When clica botão para inserir dados pessoais  
+	Then retornar à página de cadastro  
+	And mostrar mensagem de erro no topo da página   

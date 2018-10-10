@@ -33,7 +33,7 @@ development:
   # Minimum log levels, in increasing order:
   #min_messages: notice
 
-test:
+test: &test
   <<: *default
   database: pensionapp_test
 
@@ -61,3 +61,6 @@ production:
   database: pensionapp_production
   username: pensionapp
   password: <%= ENV['PENSIONAPP_DATABASE_PASSWORD'] %>
+
+cucumber:
+  <<: *test
