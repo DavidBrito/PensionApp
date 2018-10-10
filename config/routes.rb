@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'homepage/index' 
+  get 'homepage' => 'homepage#index', as: :homepage 
 
-  
   devise_for :usuarios
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

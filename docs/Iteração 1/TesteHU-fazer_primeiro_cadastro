@@ -11,7 +11,7 @@ Scenario: usuário quer fazer cadastro como proprietário, e consegue
 	And insere cpf "11122233345"  
 	And insere telefone "998765432"  
 	When clica botão finalizar cadastro  
-	Then deve redirecionar para página inicial da aplicação  
+	Then deve redirecionar para paágina inicial da aplicação  
 	And mostrar mensagem de sucesso no topo da página  
     
 Scenario usuário quer fazer cadastro como proprietário, mas falha  
