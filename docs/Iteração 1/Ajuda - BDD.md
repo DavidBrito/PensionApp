@@ -22,6 +22,3 @@ Scenario: cadastro na aplicação
     Then eu devo ver a mensagem "Login autorizado"  
     
 LINKS DE APOIO: https://pastebin.com/U0KnNWuQ  
-
-------------------------------------------------------------------
-#### Escrevam a partir daqui:
