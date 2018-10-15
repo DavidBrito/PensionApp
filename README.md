@@ -4,7 +4,7 @@ Projeto da disciplina de de Engenharia de Software [IF977] do curso de Sistemas 
 **Link da aplicação:** https://pension-app.herokuapp.com/  
 **Screencast:**
 
-###### **Equipe:**
+#### **Equipe:**
 
 - Ewerton David Brito de Jesus - EDBJ2
 
@@ -14,6 +14,10 @@ Projeto da disciplina de de Engenharia de Software [IF977] do curso de Sistemas 
 
 - Claudio Victor Rosas Pacheco - CVRP
 
-###### **Descrição**
+#### **Descrição**
 
 O PensionApp é um serviço que permite centralizar a interação entre donos de pensionatos estudantis e seus moradores, facilitando a comunicação e fornencendo ferramentas para melhorar a gestão dessas moradias.  
+
+#### **Informações**
+
+As entregas das iterações da disciplina [IF977] estão na pasta "docs" em suas respectivas pastas.
