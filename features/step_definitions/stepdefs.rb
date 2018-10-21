@@ -1,130 +1,35 @@
-
-# TODO: agrupar por scenario
-
-Given("usuário está na página de cadastro") do
-  pending # Write code here that turns the phrase above into concrete actions
+Given("estou na pagina inicial do usuario") do
+  visit homepage_path
 end
 
-Given("usuário seleciona cadastro de proprietário") do
-  pending # Write code here that turns the phrase above into concrete actions
+When("clico em {string}") do |link|
+  click_on link
 end
 
-When("clica botão para proprietários") do
-  pending # Write code here that turns the phrase above into concrete actions
+Then("devo ir para pagina quadro de tarefas") do
+  expect(page).to have_current_path(tasks_path)
 end
 
-When("insere nome {string}") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+Given("estou na pagina criar tarefas") do
+  visit new_task_path
 end
 
-When("insere cpf {string}") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+When("preencho o formulario de tarefas") do
+  fill_in("task[titulo]", with: 'Jogar lixo fora')
+  fill_in("task[descricao]", with: 'Jogar o lixo fora para nao apodrecer')
+  fill_in("task[data]", with: '21-10-2018 06:18')
 end
 
-When("insere telefone {string}") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+Then("uma nova tarefa é criada") do
+  expect(page).to have_content 'Task was successfully created'
 end
 
-Then("deve recarregar página de cadastro de proprietário") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then("exibir mensagem de erro no topo da página") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then("mostrar campos onde há erro") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Given("usuário seleciona cadastro de inquilino") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When("clica botão para inquilino") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When("insere número de convite") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When("número de convite é válido") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When("clica botão para inserir dados pessoais") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then("deve redirecionar para página inicial da aplicação") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then("retornar à página de cadastro") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When("número de convite não é válido") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then("mostrar mensagem de erro no topo da página") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then("mostrar mensagem de sucesso no topo da página") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When("insere <nome>") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When("insere <cpf>") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When("insere <telefone>") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When("clica botão finalizar cadastro") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then("deve redirecionar para paágina inicial da aplicação") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-
-# CADASTRO PROPRIETARIO
-
-Given("eu estou na pagina inicial do pensionapp") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When("eu clico em {string}") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then("eu vou para pagina de cadastro proprietario") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Given("eu estou na pagina de cadastro proprietario") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When("preencho {string} com {string}") do |string, string2|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then("eu vou para pagina inicial do usuario") do
-  pending # Write code here that turns the phrase above into concrete actions
+When("tento criar tarefa sem campos obrigatorios preenchidos") do
+  fill_in('task[titulo]', with: '')
+  fill_in('task[descricao]', with: 'Jogar o lixo fora para nao apodrecer')
+  fill_in('task[data]', with: '21-10-2018 06:18')
 end
 
 Then("devo ver {string}") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(page).to have_content string  
 end
-

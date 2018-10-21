@@ -10,11 +10,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-group :development, :test do
-  gem 'byebug'
-end
 
 group :test do
+  gem 'byebug'
+  gem 'rspec-rails', '~> 3.8'
   gem 'cucumber-rails'
   gem 'database_cleaner'
 end
@@ -27,5 +26,3 @@ end
 group :production do
   gem 'rails_12factor'
 end
-
-ruby "2.4.4"

@@ -1,0 +1,43 @@
+<%= form_for(@task) do |f| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% @task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titulo %><br>
+    <%= f.text_field :titulo, :required => 'true' %>
+  </div>
+  <div class="field">
+    <%= f.label :descricao %><br>
+    <%= f.text_field :descricao %>
+  </div>
+  <div class="field">
+    <%= f.label :data %><br>
+    <%= f.text_field :data %>
+  </div>
+  <div class="field">
+    <%= f.label :delegante %><br>
+    <%= f.text_field :delegante %>
+  </div>
+  <div class="field">
+    <%= f.label :delegado %><br>
+    <%= f.text_field :delegado %>
+  </div>
+  <div class="field">
+    <%= f.label :estado_tarefa %><br>
+    <%= f.number_field :estado_tarefa %>
+  </div>
+  
+  
+  <div class="actions">
+    <%= f.submit "Criar Tarefa"%>
+  </div>
+<% end %>
