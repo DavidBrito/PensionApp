@@ -12,9 +12,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   gem 'byebug'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :test do
+  gem 'shoulda-matchers'
   gem 'cucumber-rails'
   gem 'database_cleaner'
 end
