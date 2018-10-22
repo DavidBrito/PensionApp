@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :titulo %><br>
-    <%= f.text_field :titulo, :required => 'true' %>
+    <%= f.text_field :titulo %>
   </div>
   <div class="field">
     <%= f.label :descricao %><br>
@@ -35,8 +35,7 @@
     <%= f.label :estado_tarefa %><br>
     <%= f.number_field :estado_tarefa %>
   </div>
-  
-  
+    
   <div class="actions">
     <%= f.submit "Criar Tarefa"%>
   </div>
