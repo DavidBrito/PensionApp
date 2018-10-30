@@ -2,33 +2,28 @@
 
 <p>
   <strong>Titulo:</strong>
-  <%= @task.titulo %>
+  <%= @task.title %>
 </p>
 
 <p>
   <strong>Descricao:</strong>
-  <%= @task.descricao %>
+  <%= @task.description %>
 </p>
 
 <p>
-  <strong>Data:</strong>
-  <%= @task.data %>
-</p>
-
-<p>
-  <strong>Delegante:</strong>
-  <%= @task.delegante %>
+  <strong>Data criação:</strong>
+  <%= @task.created_at %>
 </p>
 
 <p>
   <strong>Delegado:</strong>
-  <%= @task.delegado %>
+  <%= @task.delegated %>
 </p>
 
 <p>
-  <strong>Estado tarefa:</strong>
-  <%= @task.estado_tarefa %>
+  <strong>Estado:</strong>
+  <%= @task.status %>
 </p>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to 'Voltar', tasks_path %>
