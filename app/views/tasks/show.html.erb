@@ -1,18 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Titulo:</strong>
+  <strong>Criador:</strong>
+  <%= @task.user_id %>
+</p>
+
+<p>
+  <strong>Título:</strong>
   <%= @task.title %>
 </p>
 
 <p>
-  <strong>Descricao:</strong>
+  <strong>Descrição:</strong>
   <%= @task.description %>
 </p>
 
 <p>
-  <strong>Data criação:</strong>
-  <%= @task.created_at %>
+  <strong>Data de criação:</strong>
+  <%= @task.created_at.strftime('%d-%m-%Y') %>
 </p>
 
 <p>
@@ -25,5 +30,5 @@
   <%= @task.status %>
 </p>
 
-<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Editar', edit_task_path(@task) %> |
 <%= link_to 'Voltar', tasks_path %>

@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :task do
-    pk_task {1}
-    #fk_task_user {'x3c4v6'}
+    id {1}
+    user
     title {'Tirar o lixo'}
     description {'O lixo precisa ser tirado pq...'}
-    delegated {'b5c3v1'}
+    delegated {2}
     status {0}
   end
 end

@@ -1,7 +1,7 @@
 <%= form_for(@task) do |f| %>
   <% if @task.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@task.errors.count, "error") %> Impediram esta tarefa de ser salva:</h2>
+      <h2><%= pluralize(@task.errors.count, "erros") %> impediram esta tarefa de ser salva:</h2>
 
       <ul>
       <% @task.errors.full_messages.each do |message| %>
@@ -22,10 +22,6 @@
   <div class="field">
     <%= f.label :delegated %><br>
     <%= f.text_field :delegated %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.number_field :status %>
   </div>
     
   <div class="actions">
