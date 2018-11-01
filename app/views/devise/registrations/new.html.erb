@@ -1,0 +1,39 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+  
+  <div class="field">
+    <%= f.label 'Nome' %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "Nome" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label 'CPF' %><br />
+    <%= f.text_field :cpf, autocomplete: "Cpf" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label 'Email' %><br />
+    <%= f.email_field :email, autocomplete: "Email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Senha' %>
+    <% if @minimum_password_length %>
+    <em>(No mínimo <%= @minimum_password_length %> caracteres)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "Senha" %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Confirmar senha' %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "Se" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Cadastrar" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
