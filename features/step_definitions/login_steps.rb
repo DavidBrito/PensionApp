@@ -15,5 +15,9 @@ When("preencho os dados do login sem ser cadastrado") do
 end
 
 Then("estou na pagina de usuario") do
-  visit homepage_path
+  expect(page).to have_content "Homepage"
+end
+
+Then("devo ver mensagem de erro") do
+  expect(page).to have_content "Email ou senha incorretos"
 end
