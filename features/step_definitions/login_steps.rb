@@ -1,7 +1,7 @@
 #FEATURE FAZER LOGIN
 
 Given("estou na pagina de login") do
-   visit login_page_path
+   visit login_path
 end
 
 When("preencho os dados do login sendo cadastrado") do
