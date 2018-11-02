@@ -9,13 +9,13 @@ When("clico em {string}") do |link|
 end
 
 When("preencho o formulario de tarefas") do
-  fill_in("task[titulo]", with: 'Jogar lixo fora')
-  fill_in("task[descricao]", with: 'Jogar o lixo fora para nao apodrecer')
-  fill_in("task[data]", with: '21-10-2018 06:18')
+  fill_in("task[title]", with: 'Jogar lixo fora')
+  fill_in("task[description]", with: 'Jogar o lixo fora para nao apodrecer')
+  fill_in("task[delegated]", with: '1')
 end
 
 When("tento criar tarefa sem campos obrigatorios preenchidos") do
-  fill_in('task[descricao]', with: 'Jogar o lixo fora para nao apodrecer')
+  fill_in('task[description]', with: 'Jogar o lixo fora para nao apodrecer')
 end
 
 Then("uma nova tarefa é criada") do
@@ -23,5 +23,5 @@ Then("uma nova tarefa é criada") do
 end
 
 Then("devo ver mensagem de erro") do
-  expect(page).to have_content "Titulo can't be blank"
+  expect(page).to have_content "Title can't be blank"
 end
