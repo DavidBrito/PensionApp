@@ -1,7 +1,7 @@
 <%= form_for(@task) do |f| %>
   <% if @task.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+      <h2><%= pluralize(@task.errors.count, "erros") %> impediram esta tarefa de ser salva:</h2>
 
       <ul>
       <% @task.errors.full_messages.each do |message| %>
@@ -12,28 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :titulo %><br>
-    <%= f.text_field :titulo %>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :descricao %><br>
-    <%= f.text_field :descricao %>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
   </div>
   <div class="field">
-    <%= f.label :data %><br>
-    <%= f.text_field :data %>
-  </div>
-  <div class="field">
-    <%= f.label :delegante %><br>
-    <%= f.text_field :delegante %>
-  </div>
-  <div class="field">
-    <%= f.label :delegado %><br>
-    <%= f.text_field :delegado %>
-  </div>
-  <div class="field">
-    <%= f.label :estado_tarefa %><br>
-    <%= f.number_field :estado_tarefa %>
+    <%= f.label :delegated %><br>
+    <%= f.text_field :delegated %>
   </div>
     
   <div class="actions">

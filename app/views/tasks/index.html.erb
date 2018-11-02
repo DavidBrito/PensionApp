@@ -1,16 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Tasks</h1>
-
+<h1>Listando Tarefas</h1>
 <table>
   <thead>
     <tr>
-      <th>Titulo</th>
-      <th>Descricao</th>
-      <th>Data</th>
-      <th>Delegante</th>
+      <th>Criador</th>
+      <th>Título</th>
+      <th>Descrição</th>
       <th>Delegado</th>
-      <th>Estado tarefa</th>
+      <th>Data de criação</th>
+      <th>Estado</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,15 +17,16 @@
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
-        <td><%= task.titulo %></td>
-        <td><%= task.descricao %></td>
-        <td><%= task.data %></td>
-        <td><%= task.delegante %></td>
-        <td><%= task.delegado %></td>
-        <td><%= task.estado_tarefa %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= task.user_id %> </td>
+        <td><%= task.title %></td>
+        <td><%= task.description %></td>
+        <td><%= find_user_name(task.delegated) %></td>
+        <td><%= task.created_at.strftime('%d-%m-%Y') %></td>
+        <td><%= task.status %></td>
+        
+        <td><%= link_to 'Mostrar', task %></td>
+        <td><%= link_to 'Editar', edit_task_path(task) %></td>
+        <td><%= link_to 'Destruir', task, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
