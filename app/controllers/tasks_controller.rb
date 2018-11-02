@@ -5,6 +5,7 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = Task.all
+    @users = User.all
   end
 
   # GET /tasks/1
@@ -25,7 +26,9 @@ class TasksController < ApplicationController
   # POST /tasks.json
   def create
     @task = Task.new(task_params)
-
+    
+    # TODO: campo user_id vai ser salva com o usuario que criou a terefa @task.user_id = *id usuario*
+    
     respond_to do |format|
       if @task.save
         format.html { redirect_to @task, notice: 'Task was successfully created.' }
@@ -69,6 +72,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:titulo, :descricao, :data, :delegante, :delegado, :estado_tarefa)
+      params.require(:task).permit(:title, :description, :created_at, :delegated, :status, :user_id)
     end
 end
