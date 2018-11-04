@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :task do
-    id {1}
-    user
+    id {100}
+    association :user, factory: :user, strategy: :build
     title {'Tirar o lixo'}
     description {'O lixo precisa ser tirado pq...'}
     delegated {2}

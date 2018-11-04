@@ -4,6 +4,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Criador</th>
       <th>Título</th>
       <th>Descrição</th>
@@ -13,11 +14,11 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
-        <td><%= task.user_id %> </td>
+        <td><%= task.id %></td>
+        <td><%= find_user_name(task.user_id) %></td>
         <td><%= task.title %></td>
         <td><%= task.description %></td>
         <td><%= find_user_name(task.delegated) %></td>

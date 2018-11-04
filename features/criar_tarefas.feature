@@ -1,7 +1,12 @@
+@criar_tarefas
+
 Feature: criar tarefas
 Como um inquilino
 Para que um tarefa apareça no quadro de tarefas
 Eu quero adicionar uma tarefa
+
+Background: um usuario existe
+  Given sou usuario logado
 
 Scenario: Inquilino tenta criar tarefa e consegue
 Given estou na pagina criar tarefas

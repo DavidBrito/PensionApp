@@ -19,7 +19,6 @@ RSpec.describe Task, :type => :model do
       test_task.description = ""
       expect(test_task).not_to be_valid
     end
-    
   end
   
   context "Associations" do

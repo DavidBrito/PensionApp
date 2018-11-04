@@ -1,7 +1,10 @@
 <%= form_for(@task) do |f| %>
   <% if @task.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@task.errors.count, "erros") %> impediram esta tarefa de ser salva:</h2>
+      <h2> 
+         <%= pluralize(@task.errors.count, 'erro') %>
+         <%= pluralize(@task.errors.count, 'Encontrado', 'Encontrados') %>
+      </h2>
 
       <ul>
       <% @task.errors.full_messages.each do |message| %>
@@ -15,16 +18,18 @@
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
+  
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_field :description %>
   </div>
+  
   <div class="field">
     <%= f.label :delegated %><br>
-    <%= f.text_field :delegated %>
+    <%= f.collection_select(:delegated, User.all, :id, :name, {:include_blank => "Please select"}, {id: "oi"}) %>            
   </div>
     
   <div class="actions">
-    <%= f.submit "Criar Tarefa"%>
+    <%= f.submit "Criar Tarefa" %>
   </div>
 <% end %>
