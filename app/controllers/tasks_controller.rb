@@ -1,12 +1,12 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:show, :edit, :update, :destroy, :completed]
   before_action :authenticate_user!
   
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
-    @users = User.all
+    @tasks = Task.order(:id)
+    respond_to :html, :json
   end
 
   # GET /tasks/1
@@ -60,8 +60,19 @@ class TasksController < ApplicationController
   # DELETE /tasks/1.json
   def destroy
     @task.destroy
+    
     respond_to do |format|
       format.html { redirect_to tasks_url, notice: 'Tarefa removida com sucesso.' }
+      format.json { head :no_content }
+    end
+  end
+
+  # Concluir tarefas
+  def completed
+    @task.update(status: 1)
+    
+    respond_to do |format|
+      format.html { redirect_to tasks_url, notice: 'Tarefa concluida com sucesso.' }
       format.json { head :no_content }
     end
   end

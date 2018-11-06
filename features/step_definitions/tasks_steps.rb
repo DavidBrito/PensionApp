@@ -1,4 +1,6 @@
 # GIVEN
+
+
 Given("sou usuario cadastrado") do
   sign_up
 end
@@ -28,7 +30,9 @@ Given("existe tarefa nao alocada para mim") do
   new_task
 end
 
+
 # WHEN
+
 
 When("clico em {string}") do |link|
   click_on link
@@ -49,15 +53,23 @@ When("tento criar tarefa sem campos obrigatorios preenchidos") do
   fill_in('task[description]', with: nil )
 end
 
+When("tento concluir minha tarefa") do
+   # td = page.first(:css, "tr#task-values td.complete").click
+   pending
+end
+
 When("tarefa esta alocada para mim") do
-  pending
+ td = page.first(:css, "tr#task-values td.delegated", text: @user.name)
+ expect(td.text).to eq(@user.name)
 end
 
 When("tarefa nao alocada para mim") do
   pending
 end
 
+
 # THEN
+
 
 Then("uma nova tarefa é criada") do
   expect(page).to have_content "Tarefa criada com sucesso."

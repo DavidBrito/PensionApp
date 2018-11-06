@@ -2,10 +2,16 @@ require 'rails_helper'
 
 RSpec.describe TasksController, type: :controller do
 
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
-
+  let!(:valid_attributes) { FactoryBot.attributes_for(:task) }
+  
+  let(:task) { FactoryBot.create(:task) }
+    
+  before(:all) do
+      user = FactoryBot.create(:user)
+      login_as(user, :scope => :user)
+  end
+    
+=begin
   let(:invalid_attributes) {
     skip("Add a hash of attributes invalid for your model")
   }
@@ -106,6 +112,19 @@ RSpec.describe TasksController, type: :controller do
       task = Task.create! valid_attributes
       delete :destroy, {:id => task.to_param}, valid_session
       expect(response).to redirect_to(tasks_url)
+    end
+
+  end
+=end  
+
+  describe "PUT #completed" do
+    
+    it "should change task status" do   
+      expect{ put :completed, id: task.id; task.reload }.to change(task, :status).to(1)
+    end
+    
+    it "should not permit non assigned user to complete" do
+      # expect { delete :destroy, { id: 'unknown' } }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
 end

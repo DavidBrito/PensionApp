@@ -1,6 +1,5 @@
 module LoginHelper
 
-
 # Helpers sobre usuários
 
 def build_user(password='password')
@@ -12,9 +11,10 @@ def create_user(password='password')
 end
 
 def sign_up
-  
   password = "password"
   user = build_user(password)
+  
+  delete_user(user)
   
   visit new_user_registration_path
   
@@ -44,6 +44,11 @@ def login
   expect(page).to have_current_path(root_path)
 
 end
+
+def delete_user(user)
+  User.find(user.id).destroy
+end
+
 
 # Helpers sobre tarefas
 
