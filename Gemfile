@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'rails-i18n', '~> 4.0'
+gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
 
 group :development, :test do
   gem 'byebug'

@@ -1,3 +1,171 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.welcome-title {
+    font-size: 2em;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.btn-cadastro {
+    background:#03A688;
+    color: #fff !important;
+    border-radius: 10px;
+    font-weight:normal;
+    
+    &:hover {
+        background:#06B999;
+    }
+    
+}
+.welcome-header {
+    background: #04D98B;
+    
+    h1 {
+        color: #fff;
+    }
+    .btn {
+        background: none;
+        color: #fff;
+        border: solid 1px #fff;
+        height: 40px;
+        width: 140px;
+        border-radius: 20px;
+        
+        &:hover {
+            background: #fff;
+            color: #04D98B;
+        }
+    }
+}
+
+.header-content {
+    height:400px;
+    background: url("https://udv.edu.gt/wp-content/uploads/2017/10/3-L.jpg");
+    background-position: center center;
+	background-size: cover;
+	text-align: center;
+	
+    .header-content-box {
+        padding-top: 100px;
+        color: #fff;
+        h1 {
+            font-weight: bold;
+            font-size: 4em;
+        }
+        
+        p {
+            max-width: 460px;
+            margin: 0 auto;
+            padding-bottom: 40px;
+            
+        }
+        
+    }
+}
+
+//funcionalidades
+.func {
+    h2 {
+        margin-top: 10px;
+        font-size: 1.5em;
+        color:#707070;
+    }
+    
+    p {
+        padding: 0 50px 0 50px;
+        text-align: center;
+        color:#707070;
+    }
+    
+    span {
+        font-size: 5em;
+    }
+}
+
+//vantagens
+.vantagem-box {
+    width:46%;
+    height:400px;
+    background: url("https://udv.edu.gt/wp-content/uploads/2017/10/3-L.jpg");
+    background-position: center center;
+	background-size: cover;
+	text-align: center;
+}
+.vantagem-box-text {
+    width:54%;
+    padding: 0 50px 0 50px;
+
+    p {
+        color: #707070;
+        line-height: 22px;
+        max-width: 550px;
+        margin: 30px 0;
+    }
+}
+
+//time
+.welcome-team {
+    h2 {
+
+        font-size: 1.5em;
+    }
+    
+    span {
+        padding-bottom: 55px;
+    }
+    .box-img {
+        margin: 0 auto;
+        width: 130px;
+        height: 130px;       
+        border-radius: 50%;
+        background: #ccc;
+    
+    }
+    
+    a {
+
+        text-align: center;
+        font-size: 1.6em;
+    }
+    
+}
+
+//action
+.welcome-action {
+  margin-top: 60px;
+  background-image: linear-gradient(to right, #077258 , #11748D, #2F377D);
+  height: 200px;
+  
+  h1 {
+      padding: 20px 0 10px 0;
+      color: #fff;
+  }
+  
+  p {
+      color:#DCDCDC;
+      max-width: 550px;
+  }
+  
+  .btn-cadastro {
+      margin-top: 40px;
+  }
+  
+  
+}
+
+footer {
+    background: #ccc;
+    height: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+
