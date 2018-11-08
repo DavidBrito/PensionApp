@@ -71,6 +71,8 @@ def new_task(delegated="Please select")
   select(delegated, :from => 'task[delegated]')
   
   click_on 'Criar Tarefa'
+  
+  Task.where(title: @task[:title]).last
 end
 
 end

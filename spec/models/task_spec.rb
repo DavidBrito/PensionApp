@@ -24,6 +24,4 @@ RSpec.describe Task, :type => :model do
   context "Associations" do
     it { should belong_to :user }
   end
-  
-  end  
 end
