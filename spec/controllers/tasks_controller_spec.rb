@@ -10,9 +10,9 @@ RSpec.describe TasksController, type: :controller do
       user = FactoryBot.create(:user)
       login_as(user, :scope => :user)
   end
-    
+
   let(:invalid_attributes) { FactoryBot.attributes_for(:task, title: nil, user_id: nil) }
-  
+
   describe "GET #index" do
     it "returns a success response" do
       Task.create! valid_attributes
