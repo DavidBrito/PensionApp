@@ -1,153 +1,162 @@
-### História de usuário
+## História de usuário (HU)
 
-### Perfil: Usuário
+As seguintes HUs seguem o formato [Connextra](https://www.agilealliance.org/glossary/role-feature/) e definem as funcionalidades esssenciais da aplicação segundo os requisitos da mesma.  
+Segmentam-se em três perfis:  
+* Usuário - utilizador sem cadastro realizado, ou utilizador já cadastrado que desempenhe ações disponíveis em ambos os perfis principais (inquilino, proprietário);  
+* Inquilino - perfil de utilizador já cadastrado, no papel de morador da residência;  
+* Proprietário - perfil de utilizador já cadastrado, no papel de dono da residência;  
+  
+  
+## Perfil: Usuário
 
-##### Fazer primeiro cadastro   
-Como um usuário não cadastrado  
-Para que eu possa fazer uso da aplicação  
-Eu desejo me cadastrar no PensionApp  
+### Fazer primeiro cadastro
+Como | Eu quero | Para  
+---- | -------- | ---  
+novo usuário | me cadastrar no PensionApp | que eu possa fazer uso da aplicação  
 
-##### Fazer Login
-Como um usuário já cadastrado  
-Para que eu possa acessar a aplicação  
-Eu quero poder logar no PensionApp com um email e senha  
+### Fazer login
+Como | Eu quero | Para  
+---- | -------- | ---  
+usuário já cadastrado | poder logar no PensionApp com um email e senha | que eu tenha acesso à aplicação  
 
-##### Cadastro de usuário como proprietário
-Como um usuário não cadastrado  
-Para que eu possa gerir minha propriedade  
-Eu desejo me cadastrar com o perfil de proprietario  
+### Cadastro de usuário como proprietário
+Como | Eu quero | Para  
+---- | -------- | ---  
+usuário não cadastrado | me cadastrar com o perfil de proprietario | que eu possa gerir minha propriedade via  
 
-##### Aceitar Convite
-Como um usuário não cadastrado  
-Para ser aceito como membro de uma moradia  
-Eu quero me cadastrar com o perfil de inquilino  
+### Aceitar convite do proprietário
+Como | Eu quero | Para  
+---- | -------- | ---  
+usuário não cadastrado | me cadastrar com o perfil de inquilino | ser aceito como membro de uma moradia  
 
-##### Usar o chat
-Como um usuário já cadastrado  
-Para que eu possa me comunicar diretamente com outro usuário  
-Eu quero conversar através do chat  
+### Usar o chat
+Como | Eu quero | Para  
+---- | -------- | ---  
+usuário já cadastrado | conversar através do chat | que eu possa me comunicar diretamente com outro usuário  
+  
+  
+## Perfil: Inquilino
 
-### Perfil: Inquilino
+### Acessar o Quadro de Avisos
+Como | Eu quero | Para  
+---- | -------- | ---  
+inquilino | ver o quadro de avisos | que eu possa saber de novos avisos  
 
-##### Acessar o Quadro de Avisos  
-Como um inquilino  
-Para que eu possa saber de novos avisos  
-Eu desejo ver o quadro de avisos  
+### Inserir mensagens no Quadro de Avisos
+Como | Eu quero | Para  
+---- | -------- | ---  
+inquilino |inserir mensagens no quadro de avisos | que eu possa fazer comunicados aos outros usuários da aplicação  
 
-##### Inserir mensagens no Quadro de Avisos
-Como um inquilino  
-Para que eu possa fazer comunicados aos outros usuários da aplicação  
-Eu desejo inserir mensagens no quadro de avisos  
+### Excluir mensagens no Quadro de Avisos
+Como | Eu quero | Para  
+---- | -------- | ---  
+inquilino |deletar mensagens no quadro de avisos | que eu possa apagar comunicados postados por mim  
 
-##### Excluir mensagens no Quadro de Avisos
-Como um inquilino  
-Para que eu possa apagar comunicados postados por mim  
-Eu desejo deletar mensagens no quadro de avisos  
+### Abrir chamado de Manutenção
+Como | Eu quero | Para  
+---- | -------- | ---  
+inquilino | abrir um chamado de manutenção | que uma manutenção seja feita  
 
-##### Abrir chamado de Manutenção
-Como um inquilino  
-Para que uma manutenção seja feita  
-Eu quero abrir um chamado de manutenção
+### Visualizar Chamado de Manutenção
+Como | Eu quero | Para  
+---- | -------- | ---  
+inquilino | ter acesso a lista de Chamados enviados | que eu possa ver chamados de manutenção criados por mim  
 
-##### Visualizar Chamado de Manutenção
-Como um inquilino  
-Para que eu possa ver chamados de manutenção criados por mim  
-Eu quero ter acesso a lista de Chamados enviados  
+### Criar Tarefa
+Como | Eu quero | Para  
+---- | -------- | ---  
+inquilino | adicionar uma Tarefa | uma tarefa apareça no Quadro de Tarefas  
 
-##### Criar Tarefa
-Como um inquilino  
-Para que uma tarefa apareça no Quadro de Tarefas  
-Eu quero adicionar uma Tarefa  
+### Delegar Tarefa
+Como | Eu quero | Para  
+---- | -------- | ---  
+inquilino | delegar uma tarefa do quadro de avisos a outro inquilino | uma tarefa adquira um responsável  
 
-##### Delegar Tarefa
-Como um inquilino  
-Para que uma tarefa adquira um responsável  
-Eu quero delegar uma tarefa do quadro de avisos a outro inquilino  
+### Concluir Tarefa
+Como | Eu quero | Para  
+---- | -------- | ---  
+inquilino | marcar uma tarefa como realizada | uma tarefa saia do Quadro de Tarefas  
+  
+  
+## Perfil: Proprietário
 
-##### Concluir Tarefa
-Como um inquilino  
-Para que uma tarefa saia do Quadro de Tarefas  
-Eu quero marcar uma tarefa como realizada  
+### Adicionar Propriedade
+Como | Eu quero | Para  
+---- | -------- | ---  
+proprietário | Cadastrar um nova moradia | que eu possa ter mais uma moradia cadastrada  
 
-### Perfil: Proprietário
+### Editar Propriedade
+Como | Eu quero | Para  
+---- | -------- | ---  
+proprietário | editar as propriedades já cadastradas | que eu altere dados sobre a moradia  
 
-##### Adicionar Propriedade
-Como um proprietário  
-Para que eu possa ter mais uma moradia cadastrada  
-Eu quero Cadastrar um nova moradia  
+### Excluir Propriedade
+Como | Eu quero | Para  
+---- | -------- | ---  
+proprietário | excluir uma moradia | que eu possa desvincular um imóvel 
 
-##### Editar Propriedade
-Como um proprietário  
-Para que eu possa fazer alterações na moradia  
-Eu quero editar as propriedades já cadastradas  
+### Adicionar Quarto
+Como | Eu quero | Para  
+---- | -------- | ---  
+proprietário | Cadastrar um novo quarto | que eu possa incluir os quartos da moradia
 
-##### Excluir Propriedade
-Como um proprietário  
-Para que eu possa desvincular um imóvel 
-Eu quero excluir uma moradia  
+### Editar Quarto
+Como | Eu quero | Para  
+---- | -------- | ---  
+proprietário | editar os quartos já inseridos no sistema | que eu possa alterar dados de um quarto  
 
-##### Adicionar Quarto
-Como um proprietário  
-Para que eu possa incluir os quartos da moradia
-Eu quero Cadastrar um novo quarto
+### Excluir Quarto
+Como | Eu quero | Para  
+---- | -------- | ---  
+proprietário | excluir um quarto | que eu possa desassociar um quarto da moradia  
 
-##### Editar Quarto
-Como um proprietário  
-Para que eu possa alterar dados de um quarto  
-Eu quero editar os quartos já inseridos no sistema  
+### Ver Chamado de Manutenção
+Como | Eu quero | Para  
+---- | -------- | ---  
+proprietario | ter acesso a lista de manutenções | que eu possa lidar com as manutenções que venham a ocorrer  
 
-##### Excluir Quarto
-Como um proprietário  
-Para que eu possa desassociar um quarto da moradia  
-Eu quero excluir um quarto  
+### Responder Chamdado de Manutenção
+Como | Eu quero | Para  
+---- | -------- | ---  
+proprietário | responder as solicitações de Manutenção | que eu possa dar um retorno aos inquilinos sobre os Chamados de Manutenção  
 
-##### Ver Chamado de Manutenção
-Como um proprietario  
-Para que eu possa lidar com as manutenções que venham a ocorrer  
-Eu quero ter acesso a lista de manutenções  
+### Concluir Chamado de Manutenção
+Como | Eu quero | Para  
+---- | -------- | ---  
+proprietário | marcar o Chamado de Manutenção como realizado | sinalizar que a manutenção solicitada já foi atendida  
 
-##### Responder Chamdado de Manutenção
-Como um proprietário  
-Para que eu possa dar um retorno aos inquilinos sobre os Chamados de Manutenção  
-Eu quero responder as solicitações de Manutenção  
+### Enviar Convite
+Como | Eu quero | Para  
+---- | -------- | ---  
+proprietário | mandar um convite para qualquer usuario | que um usuario possa ser vinculado a uma propriedade  
 
-##### Concluir Chamado de Manutenção
-Como um proprietário  
-Para sinalizar que a manutenção solicitada já foi atendida  
-Eu quero marcar o Chamado de Manutenção como realizado  
+### Editar Inquilino
+Como | Eu quero | Para  
+---- | -------- | ---  
+proprietário | editar as informações dos inquilinos | que eu possa editar os dados de um inquilino  
 
-##### Enviar Convite
-Como um proprietário  
-Para que um usuario possa ser vinculado a uma propriedade  
-Eu quero mandar um convite para qualquer usuario  
+### Excluir Inquilino
+Como | Eu quero | Para  
+---- | -------- | ---  
+proprietário | poder excluir inquilinos | que eu possa retirar um inquilino  
 
-##### Editar Inquilino
-Como um proprietário  
-Para que eu possa editar os dados de um inquilino  
-Eu quero editar as informações dos inquilinos  
+### Lista de Funcionários
+Como | Eu quero | Para  
+---- | -------- | ---  
+proprietário | acessar a lista com os funcionarios | que eu possa acessar as informações dos funcionários  
 
-##### Excluir Inquilino
-Como um proprietário  
-Para que eu possa retirar um inquilino  
-Eu quero poder excluir inquilinos  
+### Cadastrar Fucionario
+Como | Eu quero | Para  
+---- | -------- | ---  
+proprietário | cadastrar funcionarios novos | que eu possa ter uma lista atualizada dos funcionários  
 
-##### Lista de Funcionários
-Como um proprietário  
-Para que eu possa acessar as informações dos funcionários  
-Eu quero acessar a lista com os funcionarios  
+### Editar Funcionario
+Como | Eu quero | Para  
+---- | -------- | ---  
+proprietário | editar os dados dos funcionários se necessário | que eu possa ter uma lista atualizada dos funcionários  
 
-##### Cadastrar Fucionario
-Como um proprietário  
-Para que eu possa ter uma lista atualizada dos funcionários  
-Eu quero cadastrar funcionarios novos  
-
-##### Editar Funcionario
-Como um proprietário  
-Para que eu possa ter uma lista atualizada dos funcionários  
-Eu quero editar os dados dos funcionários se necessário  
-
-##### Excluir Funcionário
-Como um proprietário  
-Para que eu possa ter uma lista atualizada dos funcionários  
-Eu quero excluir funcionários que não fazem mais parte de uma moradia  
+### Excluir Funcionário
+Como | Eu quero | Para  
+---- | -------- | ---  
+proprietário | excluir funcionários que não fazem mais parte de uma moradia | que eu possa ter uma lista atualizada dos funcionários  
 
