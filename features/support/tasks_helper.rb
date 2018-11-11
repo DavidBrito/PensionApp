@@ -14,7 +14,7 @@ def sign_up
   password = "password"
   user = build_user(password)
   
-  delete_user(user)
+  delete_user(user) if User.exists?(user.id)
   
   visit new_user_registration_path
   
