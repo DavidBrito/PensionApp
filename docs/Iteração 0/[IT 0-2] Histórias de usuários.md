@@ -1,8 +1,8 @@
 ### História de usuário (HU)
 
 As seguintes HUs seguem o formato [Connextra](https://www.agilealliance.org/glossary/role-feature/) e definem as funcionalidades esssenciais da aplicação segundo os requisitos da mesma.  
-Segmentam-se em três blocos:  
-* Usuário - utilizador sem cadastro realizado, ou utilizador já cadastrado que desempenhe ações disponíveis em ambos os perfis;  
+Segmentam-se em três perfis:  
+* Usuário - utilizador sem cadastro realizado, ou utilizador já cadastrado que desempenhe ações disponíveis em ambos os perfis principais (inquilino, proprietário);  
 * Inquilino - perfil de utilizador já cadastrado, no papel de morador da residência;  
 * Proprietário - perfil de utilizador já cadastrado, no papel de dono da residência;  
 
