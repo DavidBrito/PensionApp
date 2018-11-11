@@ -7,7 +7,7 @@ class CreateTasks < ActiveRecord::Migration
       t.string :description, null: false
       t.integer :delegated
       t.integer :status, null: false, default: 0
-      
+    
       t.timestamps
       
     end

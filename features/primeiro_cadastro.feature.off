@@ -1,3 +1,5 @@
+# language:pt
+
 Feature: fazer primeiro cadastro  
 	O usuário chegará a esta página se quiser se cadastrar como proprietário ou inquilino.  
 
@@ -5,14 +7,9 @@ Background:
 	Given usuário está na página de cadastro
 
 Scenario: usuário quer fazer cadastro como proprietário, e consegue
-	Given usuário seleciona cadastro de proprietário
-	When clica botão para proprietários
-	And insere nome "Joao da Silva"
-	And insere cpf "11122233345"
-	And insere telefone "998765432"
-	When clica botão finalizar cadastro
-    Then deve redirecionar para paágina inicial da aplicação
-    And mostrar mensagem de sucesso no topo da página
+	Dado que estou na pagina inicial do pensioapp
+	E clico em cadastrar
+	Então devo ir para pagina de cadastro
 
 Scenario: usuário quer fazer cadastro como proprietário, mas falha  
 	Given usuário seleciona cadastro de proprietário  
