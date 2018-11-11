@@ -5,8 +5,8 @@ Segmentam-se em três perfis:
 * Usuário - utilizador sem cadastro realizado, ou utilizador já cadastrado que desempenhe ações disponíveis em ambos os perfis principais (inquilino, proprietário);  
 * Inquilino - perfil de utilizador já cadastrado, no papel de morador da residência;  
 * Proprietário - perfil de utilizador já cadastrado, no papel de dono da residência;  
-
-
+  
+  
 ### Perfil: Usuário
 
 ##### Fazer primeiro cadastro   
@@ -33,7 +33,8 @@ Para ser aceito como membro de uma moradia
 Como um usuário já cadastrado  
 Eu quero conversar através do chat  
 Para que eu possa me comunicar diretamente com outro usuário  
-
+  
+  
 ### Perfil: Inquilino
 
 ##### Acessar o Quadro de Avisos  
@@ -75,7 +76,8 @@ Para que uma tarefa adquira um responsável
 Como um inquilino  
 Eu quero marcar uma tarefa como realizada  
 Para que uma tarefa saia do Quadro de Tarefas  
-
+  
+  
 ### Perfil: Proprietário
 
 ##### Adicionar Propriedade
