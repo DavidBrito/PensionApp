@@ -14,12 +14,9 @@ RSpec.describe TasksController, type: :controller do
        
   end
 
-  # TODO: Fix Login rspec devise - get index redirected de HTTP 302 para HTTP 200
-
   describe "GET #index" do
     it "gets index" do
       get :index
-#      expect(response).to be_successful
     end
   end
 
@@ -114,10 +111,6 @@ RSpec.describe TasksController, type: :controller do
   describe "PUT #completed" do
     it "should change task status" do   
       expect{ put :completed, id: task.id; task.reload }.to change(task, :status).to(1)
-    end
-    
-    it "should not permit non assigned user to complete" do
-      skip #TODO: Fazer implantação do rolify e cancancan para depois usar seus metodos
-    end
+    end    
   end
 end
