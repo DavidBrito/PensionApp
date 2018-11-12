@@ -1,23 +1,24 @@
-Feature: cadastro usuario como proprietario
+# language: pt
+
+Funcionalidade: cadastro usuario como proprietario
 Como um usuario nao cadastrado
 Para que eu possa gerir minha moradia
 Eu quero cadastrar com o perfil de proprietario
 
-Scenario: Ir pagina cadastro
-Given eu estou na pagina inicial do pensionapp
-When eu clico em "cadastro proprietario"
-Then eu vou para pagina de cadastro proprietario
+Cenário: Ir pagina cadastro
+Dado eu estou na pagina inicial do pensionapp
+Quando eu clico em "cadastro proprietario"
+Então eu vou para pagina de cadastro proprietario
 
 
-Scenario: Fazer cadastro
-
-Given eu estou na pagina de cadastro proprietario
-When preencho "email" com "email@email.com"
-And preencho "senha" com "123456"
-And preencho "confirmacao senha" com "123456"
-And preencho "nome" com "Deivid"
-And preencho "cpf" com "11122233345"
-And preencho "telefone" com "81955554444"
-And eu clico em "cadastrar"
-Then eu vou para pagina inicial do usuario
-And devo ver "cadastro realizado com sucesso"
+Cenário: Fazer cadastro
+Dado eu estou na pagina de cadastro proprietario
+Quando preencho "email" com "email@email.com"
+E preencho "senha" com "123456"
+E preencho "confirmacao senha" com "123456"
+E preencho "nome" com "Deivid"
+E preencho "cpf" com "11122233345"
+E preencho "telefone" com "81955554444"
+E eu clico em "cadastrar"
+Então eu vou para pagina inicial do usuario
+E devo ver "cadastro realizado com sucesso"
