@@ -1,4 +1,5 @@
 # GIVEN
+
 Given("sou usuario cadastrado") do
   sign_up
 end
@@ -21,14 +22,17 @@ Given("estou na pagina inicial do usuario") do
 end
 
 Given("existe tarefa alocada para mim") do
-  new_task(@user.name)
+  @delegated_task = new_task(@user.name)
 end
 
 Given("existe tarefa nao alocada para mim") do
-  new_task
+  expect(Task.where(delegated: @user.id).exists?).not_to be_truthy
+  @not_delegated_task = new_task
 end
 
+
 # WHEN
+
 
 When("clico em {string}") do |link|
   click_on link
@@ -49,13 +53,21 @@ When("tento criar tarefa sem campos obrigatorios preenchidos") do
   fill_in('task[description]', with: nil )
 end
 
+When("tento concluir minha tarefa") do
+   visit tasks_path
+   @page_task_id = page.first(:css, "tr#task-values td.id").text
+   td = page.first(:css, "tr#task-values td a#complete").click
+   expect(page).to have_content("Tarefa concluida com sucesso.")
+end
+
 When("tarefa esta alocada para mim") do
-  pending
+ expect{Task.find(@delegated_task.id)}.not_to raise_exception
 end
 
 When("tarefa nao alocada para mim") do
-  pending
+ expect(Task.find(@not_delegated_task.id).delegated).not_to eq(@user.name) 
 end
+
 
 # THEN
 
@@ -68,9 +80,9 @@ Then("devo ver mensagem de erro") do
 end
 
 Then("tarefa deve ser concluida") do
-  pending
+  expect(Task.find(@page_task_id).status).to eq(1)
 end
 
 Then("não vejo o link para conclui-la") do
-  pending
+  expect{page.first(:css, "tr#task-values td a#complete")}.to raise_error(Capybara::ExpectationNotMet)
 end

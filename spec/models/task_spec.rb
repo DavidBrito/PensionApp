@@ -24,11 +24,4 @@ RSpec.describe Task, :type => :model do
   context "Associations" do
     it { should belong_to :user }
   end
-  
-  context "Actions" do 
-    it "should change task status" do 
-      Task.complete_task(test_task)
-      expect(test_task).to be_completed
-    end
-  end  
 end

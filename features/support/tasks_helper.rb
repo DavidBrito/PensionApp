@@ -1,6 +1,5 @@
 module LoginHelper
 
-
 # Helpers sobre usuários
 
 def build_user(password='password')
@@ -12,9 +11,10 @@ def create_user(password='password')
 end
 
 def sign_up
-  
   password = "password"
   user = build_user(password)
+  
+  delete_user(user) if User.exists?(user.id)
   
   visit new_user_registration_path
   
@@ -45,6 +45,11 @@ def login
 
 end
 
+def delete_user(user)
+  User.find(user.id).destroy
+end
+
+
 # Helpers sobre tarefas
 
 def create_task
@@ -66,6 +71,8 @@ def new_task(delegated="Please select")
   select(delegated, :from => 'task[delegated]')
   
   click_on 'Criar Tarefa'
+  
+  Task.where(title: @task[:title]).last
 end
 
 end
