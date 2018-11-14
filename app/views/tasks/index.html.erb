@@ -1,9 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listando Tarefas</h1>
+<h1>Lista de Tarefas</h1>
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Criador</th>
       <th>Título</th>
       <th>Descrição</th>
@@ -13,17 +12,20 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @tasks.each do |task| %>
-      <tr>
-        <td><%= task.user_id %> </td>
-        <td><%= task.title %></td>
-        <td><%= task.description %></td>
-        <td><%= find_user_name(task.delegated) %></td>
-        <td><%= task.created_at.strftime('%d-%m-%Y') %></td>
-        <td><%= task.status %></td>
+      <tr id="task-values">
+        <td class="id"><%= task.id %></td>
+        <td class="name"> <%= find_user_name(task.user_id) %> </td>
+        <td class="title"><%= task.title %></td>
+        <td class="description"><%= task.description %></td>
+        <td class="delegated"><%= find_user_name(task.delegated) %></td>
+        <td class="creation_date"><%= task.created_at.strftime('%d-%m-%Y') %></td>
+        <td class="status"><%= task.status %></td>
         
+        <td><% if task.status == 0 %>
+            <%= link_to 'Concluir', completed_task_path(task), method: :put , id: 'complete' %>
+            <% end %></td>
         <td><%= link_to 'Mostrar', task %></td>
         <td><%= link_to 'Editar', edit_task_path(task) %></td>
         <td><%= link_to 'Destruir', task, method: :delete, data: { confirm: 'Tem certeza?' } %></td>

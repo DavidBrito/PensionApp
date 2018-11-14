@@ -1,5 +1,148 @@
-<h2>Pension App</h2>
-<ul>
-  <li> <%= link_to 'Cadastro usuário', new_user_registration_path %></li>
-  <li> <%= link_to 'Homepage', homepage_path %> </li>
-</ul>
+<header class="welcome-header container-fluid">
+    <div class="container d-flex justify-content-between align-items-center">
+        <h1>LOGO</h1>
+        <a href="users/sign_in" class="btn-login">Login</a>
+    </div>    
+</header>
+
+<!-- header content -->
+<section class="header-content container-fluid">
+       <div class="container">
+        <div class="header-content-box">
+            <h1>PensionApp</h1>
+            <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took </p>
+            
+            <%= link_to 'Cadastro usuário', new_user_registration_path, class: "btn btn-lg btn-cadastro" %>
+        </div>
+       </div>
+       <div class="overlay-green-dark"></div>
+</section>
+
+<!-- Funcionalidades -->
+<section class="container py-5 text-center">
+    <h1 class="welcome-title">Principais Funcionalidades</h1>
+    <div class="func row">
+        <div class="col-4">
+            <span class="icon-briefcase"></span>
+            <h2> Funcionalidade 1 </h2>
+            <p>Achieve virtually any look and layout from within the one template.</p>
+        </div>
+        <div class="col-4">
+            <span class="icon-bed""></span>
+            <h2> Funcionalidade 2 </h2>
+            <p>Achieve virtually any look and layout from within the one template.</p>
+        </div>
+        <div class="col-4">
+            <span class="icon-calendar-check-o"></span>
+            <h2> Funcionalidade 3 </h2>
+            <p>Achieve virtually any look and layout from within the one template.</p>
+        </div>
+    </div>
+</section>
+
+<!-- vantagens e beneficios --> 
+<section class="mt-5">
+        <h1 class="welcome-title text-center"> Vantagens e Benefícios</h1> 
+        <div class="d-flex justify-content-between">
+            <div class="vantagem-box"></div>
+            
+            <div class="vantagem-box-text">
+                <h1>Printing and typesetting industry </h1>
+                <p> Achieve virtually any look and layout from within the one template. 
+                Achieve virtually any look and layout from within the one template.Achiev
+                Achieve virtually any look and layout from within the one template. 
+                Achieve virtually any look and layout from within the one template.Achiev
+                </p>
+                <p> Achieve virtually any look and layout from within the one template. 
+                Achieve virtually any look and layout from within the one template.Achiev
+                Achieve virtually any look and layout from within the one template. 
+                Achieve virtually any look and layout from within the one template.Achiev
+                </p>
+            </div>
+        </div>
+        
+        <div class="d-flex justify-content-between mt-5">            
+            <div class="vantagem-box-text">
+                <h1>Printing and typesetting industry </h1>
+                <p> Achieve virtually any look and layout from within the one template. 
+                Achieve virtually any look and layout from within the one template.Achiev
+                Achieve virtually any look and layout from within the one template. 
+                Achieve virtually any look and layout from within the one template.Achiev
+                </p>
+                <p> Achieve virtually any look and layout from within the one template. 
+                Achieve virtually any look and layout from within the one template.Achiev
+                Achieve virtually any look and layout from within the one template. 
+                Achieve virtually any look and layout from within the one template.Achiev
+                </p>
+            </div>
+            
+            <div class="vantagem-box"></div>
+        </div>
+</section>
+
+<!-- time -->
+<section class="welcome-team container mt-5 text-center">
+    <h1 class="welcome-title"> Nosso Time</h1>
+    <div class="row">   
+        <div class="col-3">
+            <div class="box-img"></div>
+            <h2 class="mt-2">Adson Wesley</h1>
+            <span> fullstack</span>
+            <div class="">
+                <a class="icon-social-github" href="#"></a>
+                <a class="icon-facebook-square" href="#"></a>
+                <a class="icon-instagrem" href="#"></a>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="box-img"></div>
+            <h2 class="mt-2">Claudio Victor</h1>
+            <span> fullstack</span>
+            <div class="btext-center">
+                <a class="icon-social-github" href="#"></a>
+                <a class="icon-facebook-square" href="#"></a>
+                <a class="icon-instagrem" href="#"></a>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="box-img"></div>
+            <h2 class="mt-2">Dairon Eugênio</h1>
+            <span> fullstack</span>
+            <div class="">
+                <a class="icon-social-github" href="#"></a>
+                <a class="icon-facebook-square" href="#"></a>
+                <a class="icon-instagrem" href="#"></a>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="box-img"></div>
+            <h2 class="mt-2">Ewerton David</h1>
+            <span> fullstack</span>
+            <div class="">
+                <a class="icon-social-github" href="#"></a>
+                <a class="icon-facebook-square" href="#"></a>
+                <a class="icon-instagrem" href="#"></a>
+            </div>
+        </div>        
+    </div>
+</section>
+
+
+<section class="welcome-action container-fluid">
+    <div class="container">
+        <div class="row d-flex justify-content-between">
+            <div>
+                <h1> Comece Agora!</h1>
+                <p>is simply dummy text of the printing and typeseis simply dummy text of the printing and typese</p>
+            </div>
+            <div>
+                <%= link_to 'Cadastro usuário', new_user_registration_path, class: "btn btn-lg btn-cadastro" %>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="text-center bg-gray">
+    footer
+</footer>

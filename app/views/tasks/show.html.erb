@@ -2,7 +2,7 @@
 
 <p>
   <strong>Criador:</strong>
-  <%= @task.user_id %>
+  <%= find_user_name(@task.user_id) %>
 </p>
 
 <p>
@@ -22,7 +22,7 @@
 
 <p>
   <strong>Delegado:</strong>
-  <%= @task.delegated %>
+  <%= find_user_name(@task.delegated) %>
 </p>
 
 <p>
