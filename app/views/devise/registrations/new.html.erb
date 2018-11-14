@@ -1,39 +1,45 @@
+
+<div class="container cadastro">
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
   
-  <div class="field">
+  <div class="field cadastro-field">
     <%= f.label 'Nome' %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "Nome" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "Nome", placeholder: "Sue nome" %>
   </div>
   
-  <div class="field">
+  <div class="field cadastro-field">
     <%= f.label 'CPF' %><br />
-    <%= f.text_field :cpf, autocomplete: "Cpf" %>
+    <%= f.text_field :cpf, autocomplete: "Cpf", placeholder: "Seu cpf" %>
   </div>
   
-  <div class="field">
+  <div class="field cadastro-field">
     <%= f.label 'Email' %><br />
-    <%= f.email_field :email, autocomplete: "Email" %>
+    <%= f.email_field :email, autocomplete: "Email", placeholder: "Seu email" %>
   </div>
 
-  <div class="field">
+  <div class="field cadastro-field">
     <%= f.label 'Senha' %>
     <% if @minimum_password_length %>
     <em>(No mínimo <%= @minimum_password_length %> caracteres)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "Senha" %>
+    <%= f.password_field :password, autocomplete: "Senha", placeholder: "Sua senha" %>
   </div>
 
-  <div class="field">
+  <div class="field cadastro-field">
     <%= f.label 'Confirmar senha' %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "Se" %>
+    <%= f.password_field :password_confirmation, autocomplete: "Se", placeholder: "Repita sua senha" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Cadastrar" %>
+    <%= f.submit "Cadastrar", class: "btn btn-cadastro"%>
   </div>
 <% end %>
 
+<div class="text-center cadastro-link">
 <%= render "devise/shared/links" %>
+</div>
+
+</div>
