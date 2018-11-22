@@ -4,5 +4,8 @@ class User < ActiveRecord::Base
          
   validates_uniqueness_of :email, :case_sensitive => false 
 
+  enum user_type: [:tenant, :owner]
+  
   has_many :task
+  has_one :vacancy
 end
