@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @vacancy.value %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @vacancy.status %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @vacancy.room_id %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @vacancy.owner_id %>
+</p>
+
+<%= link_to 'Edit', edit_vacancy_path(@vacancy) %> |
+<%= link_to 'Back', vacancies_path %>
