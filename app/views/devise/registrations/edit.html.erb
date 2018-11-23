@@ -13,11 +13,14 @@
     <%= f.text_field :cpf, autocomplete: "Cpf" %>
   </div>
 
-
-
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autocomplete: "email" %>
+  </div>
+
+  <div class="field cadastro-field">
+    <%= f.label 'Tipo de usuário' %><br />
+    <%= f.select :user_type, User.user_types.keys.to_a %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

@@ -21,6 +21,9 @@ def sign_up
   fill_in "user[name]", with: user[:name]
   fill_in "user[cpf]", with: user[:cpf]
   fill_in "user[email]", with: user[:email]
+  
+  select('tenant', :from => 'user[user_type]')
+  
   fill_in "user[password]", with: password
   fill_in "user[password_confirmation]", with: password
   
@@ -41,7 +44,7 @@ def login
   click_button "Log in"
   
   expect(page).not_to have_content("Invalid Email or password")
-  expect(page).to have_current_path(root_path)
+  expect(page).to have_current_path(homepage_path)
 
 end
 
@@ -60,7 +63,7 @@ def build_task
   @task ||= FactoryBot.build(:task)
 end
 
-def new_task(delegated="Please select")
+def new_task(delegated="")
   
   visit new_task_path
   build_task

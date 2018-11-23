@@ -26,7 +26,7 @@
   
   <div class="field">
     <%= f.label :delegated %><br>
-    <%= f.collection_select(:delegated, User.all, :id, :name, {:include_blank => "Please select"}, {id: "oi"}) %>            
+    <%= f.collection_select(:delegated, User.all, :id, :name, {:include_blank => ""}, {id: "delegated_select"}) %>            
   </div>
     
   <div class="actions">

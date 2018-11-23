@@ -1,10 +1,26 @@
 FactoryBot.define do
+  
+  # gera email e cpf unicos para cada chamada de generate
+  
+  sequence(:email) {|n| "pessoa.#{n}@email.com" }
+  sequence(:cpf) {|n| '%010d' % rand(10 ** 11) }
+  
   factory :user do
-    id {100}
-    name {"Jose Mario"}
-    cpf {"12345678912"}
-    email {"Fulano@email.com"}
-    password {"password"}
-    password_confirmation {"password"}
+    name { "John Usuario" }
+    cpf { generate :cpf }
+    email { generate :email }
+    user_type { "tenant" }
+    password { "password" }
+    password_confirmation { "password" }
+    
+    factory :owner do
+      name { "John Proprietario" }
+      user_type { 'owner' }
+    end
+    
+    factory :tenant do
+      name { "John Inquilino" }
+      user_type { 'tenant' }
+    end
   end
 end
