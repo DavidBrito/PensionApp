@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   #  apenas aqueles configurados abaixo.
   
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :cpf, :user_type])
-    devise_parameter_sanitizer.permit(:edit, keys: [:name, :cpf, :user_type])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :cpf, :user_type, phone_number_attributes: [:user_id, :phone_number]])
+    devise_parameter_sanitizer.permit(:edit, keys: [:name, :cpf, :user_type, phone_number_attributes: [:user_id, :phone_number]])
   end
 end

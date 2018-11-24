@@ -39,11 +39,11 @@ ActiveRecord::Schema.define(version: 20181123041503) do
   add_index "maintenances", ["owner_id"], name: "index_maintenances_on_owner_id", using: :btree
 
   create_table "phone_numbers", force: :cascade do |t|
-    t.integer "owner_id",     null: false
+    t.integer "user_id",      null: false
     t.string  "phone_number", null: false
   end
 
-  add_index "phone_numbers", ["owner_id", "phone_number"], name: "index_phone_numbers_on_owner_id_and_phone_number", unique: true, using: :btree
+  add_index "phone_numbers", ["user_id", "phone_number"], name: "index_phone_numbers_on_user_id_and_phone_number", unique: true, using: :btree
 
   create_table "properties", force: :cascade do |t|
     t.string   "postal_code",    null: false
@@ -113,7 +113,7 @@ ActiveRecord::Schema.define(version: 20181123041503) do
   add_index "vacancies", ["vacancy_owner_id"], name: "index_vacancies_on_vacancy_owner_id", using: :btree
 
   add_foreign_key "maintenances", "users", column: "owner_id"
-  add_foreign_key "phone_numbers", "users", column: "owner_id"
+  add_foreign_key "phone_numbers", "users"
   add_foreign_key "properties", "users", column: "proprietary_id"
   add_foreign_key "rooms", "properties"
   add_foreign_key "tasks", "users", column: "owner_id"
