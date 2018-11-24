@@ -17,6 +17,13 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autocomplete: "email" %>
   </div>
+  
+  <div class="field cadastro-field">
+    <%= f.fields_for :phone_number do |i| %>
+        <p><%= i.label :phone_number %><br />
+        <%= i.text_field :phone_number, autocomplete: "Phone Number", placeholder: "Seu telefone" %></p>
+    <% end %>
+  </div>
 
   <div class="field cadastro-field">
     <%= f.label 'Tipo de usuário' %><br />
