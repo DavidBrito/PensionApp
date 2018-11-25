@@ -1,10 +1,12 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /properties
   # GET /properties.json
   def index
     @properties = Property.all
+    @rooms = Room.all
+    @vacancies = Vacancy.all
   end
 
   # GET /properties/1
@@ -69,6 +71,6 @@ class PropertiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_params
-      params.require(:property).permit(:postal_code, :address, :number, :city, :state, :proprietary_id)
+      params.require(:property).permit(:name, :postal_code, :address, :number, :city, :state, :proprietary_id)
     end
 end

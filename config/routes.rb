@@ -4,15 +4,22 @@ Rails.application.routes.draw do
   # cria rotas para o CRUD das entidades
   
   devise_for :users, controllers: {registrations: 'users/registrations'}
+  
+  scope '/proprietary' do
+    resources :users
+    resources :properties
+    resources :maintenances
+    resources :employees
+    resources :rooms
+    resources :vacancies
+  end
 
-  resources :properties 
   resources :maintenances
   resources :tasks
-  resources :employees
 
-  get 'users/index' => 'users#index', as: 'user'
-  get 'homepage' => 'homepage#index'  
+  get 'homepage' => 'homepage#index'
+  get 'proprietary' => 'proprietary#index'
+
   match '/tasks/:id/completed' => 'tasks#completed', as: 'completed_task', via: :put 
- 
   root 'welcome#index'
 end
