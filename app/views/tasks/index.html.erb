@@ -23,7 +23,7 @@
         <td class="creation_date"><%= task.created_at.strftime('%d-%m-%Y') %></td>
         <td class="status"><%= task.status %></td>
         
-        <td><% if task.status == 'uncompleted' %>
+        <td><% if task.status == 'uncompleted' && (current_user.id == task.owner_id || current_user.id == task.delegated)  %>
             <%= link_to 'Concluir', completed_task_path(task), method: :put , id: 'complete' %>
             <% end %></td>
         <td><%= link_to 'Mostrar', task %></td>
@@ -37,3 +37,5 @@
 <br>
 
 <%= link_to 'Nova Tarefa', new_task_path %>
+<br>
+<%= link_to 'Voltar', homepage_path %>
