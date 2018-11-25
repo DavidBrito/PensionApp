@@ -22,9 +22,14 @@
         <td><%= user.user_type %></td>
         <td><%= user.email %></td>
         <td><%= user.phone_number.map { |x| x.phone_number }.join(',').html_safe %></td>
+        <td><%= link_to 'Editar', edit_user_path(user) %></td>
+        <td><%= link_to 'Deletar', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to 'Voltar', homepage_path %>
+
 <br>
+<%= link_to 'Novo Usuário', new_user_path %>
+<br>
+<%= link_to 'Voltar', proprietary_path %>

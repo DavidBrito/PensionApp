@@ -1,4 +1,7 @@
 <h1>Homepage</h1>
 
 <p><%= link_to 'Quadro de tarefas', tasks_path %></p>
-
+   
+   <% if current_user.user_type == 'proprietary' %>
+<p>   <%= link_to 'Área do proprietário', proprietary_path %></p>
+   <% end %>

@@ -53,14 +53,15 @@ ActiveRecord::Schema.define(version: 20181124060607) do
   add_index "phone_numbers", ["user_id", "phone_number"], name: "index_phone_numbers_on_user_id_and_phone_number", unique: true, using: :btree
 
   create_table "properties", force: :cascade do |t|
-    t.string   "postal_code",    null: false
-    t.string   "address",        null: false
-    t.integer  "number"
-    t.string   "city",           null: false
-    t.string   "state",          null: false
-    t.integer  "proprietary_id", null: false
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.string   "name",           default: "", null: false
+    t.string   "postal_code",                 null: false
+    t.string   "address",                     null: false
+    t.integer  "number",         default: 0
+    t.string   "city",                        null: false
+    t.string   "state",                       null: false
+    t.integer  "proprietary_id",              null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "properties", ["address"], name: "index_properties_on_address", using: :btree
@@ -121,11 +122,11 @@ ActiveRecord::Schema.define(version: 20181124060607) do
 
   add_foreign_key "employees_properties", "employees"
   add_foreign_key "employees_properties", "properties"
-  add_foreign_key "maintenances", "users", column: "owner_id"
-  add_foreign_key "phone_numbers", "users"
+  add_foreign_key "maintenances", "users", column: "owner_id", on_delete: :cascade
+  add_foreign_key "phone_numbers", "users", on_delete: :cascade
   add_foreign_key "properties", "users", column: "proprietary_id"
-  add_foreign_key "rooms", "properties"
-  add_foreign_key "tasks", "users", column: "owner_id"
-  add_foreign_key "vacancies", "rooms"
-  add_foreign_key "vacancies", "users", column: "vacancy_owner_id"
+  add_foreign_key "rooms", "properties", on_delete: :cascade
+  add_foreign_key "tasks", "users", column: "owner_id", on_delete: :cascade
+  add_foreign_key "vacancies", "rooms", on_delete: :cascade
+  add_foreign_key "vacancies", "users", column: "vacancy_owner_id", on_delete: :cascade
 end
