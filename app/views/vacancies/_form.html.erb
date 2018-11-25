@@ -17,15 +17,15 @@
   </div>
   <div class="field">
     <%= f.label :status %><br>
-    <%= f.number_field :status %>
+    <%= f.select :status, Vacancy.statuses.keys.to_a %>
   </div>
   <div class="field">
     <%= f.label :room_id %><br>
-    <%= f.number_field :room_id %>
+    <%= f.collection_select(:room_id, Room.all, :id, :number, {}, {id: "room_select"}) %>
   </div>
   <div class="field">
-    <%= f.label :owner_id %><br>
-    <%= f.number_field :owner_id %>
+    <%= f.label :vacancy_owner_id %><br>
+    <%= f.collection_select(:vacancy_owner_id, User.where(user_type: 0), :id, :name, {include_blank: ""}, {id: "vacancy_select"}) %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Name:</strong>
+  <%= @property.name %>
+</p>
+
+<p>
   <strong>Postal code:</strong>
   <%= @property.postal_code %>
 </p>
@@ -27,7 +32,7 @@
 
 <p>
   <strong>Proprietary:</strong>
-  <%= @property.proprietary_id %>
+  <%= find_user_name(@property.proprietary_id) %>
 </p>
 
 <%= link_to 'Edit', edit_property_path(@property) %> |

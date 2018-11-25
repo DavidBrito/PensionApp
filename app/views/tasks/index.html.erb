@@ -1,6 +1,7 @@
 <div class="offset-2">
 <h1>Lista de Tarefas</h1>
-<div class="box box-tasks col-9">
+
+  <div class="box box-tasks col-9">
     <table>
       <thead>
         <tr>
@@ -25,7 +26,7 @@
             <td class="creation_date"><%= task.created_at.strftime('%d-%m-%Y') %></td>
             <td class="status"><%= task.status %></td>
             
-            <td class="bg-none"><% if task.status == 0 %>
+            <td class="bg-none"><% if if task.status == 'uncompleted' && (current_user.id == task.owner_id || current_user.id == task.delegated) %>
                 <%= link_to 'Concluir', completed_task_path(task), method: :put , id: 'complete', class: "btn btn-success"  %>
                 <% end %></td>
             <td class="bg-none"><%= link_to 'Mostrar', task, class: "btn btn-info" %></td>
@@ -35,8 +36,9 @@
         <% end %>
       </tbody>
     </table>
-
-</div>
+    <% end %>
+  </div>
 <%= link_to 'Nova Tarefa', new_task_path, class: "btn btn-primary" %>
-
+<br>
+<%= link_to 'Voltar', homepage_path %>
 </div>

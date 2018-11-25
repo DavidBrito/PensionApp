@@ -1,12 +1,7 @@
 # GIVEN
 
-Dado("sou usuario cadastrado") do
-  sign_up
-end
-
 Dado('sou usuario logado') do
-  sign_up
-  login
+  @user = login(tenant=0)
 end
 
 Dado("estou na pagina criar tarefas") do
@@ -22,12 +17,13 @@ Dado("estou na pagina inicial do usuario") do
 end
 
 Dado("existe tarefa alocada para mim") do
-  @delegated_task = new_task(@user.name)
+  @own_task = create_task(@user, @user.name)
 end
 
 Dado("existe tarefa nao alocada para mim") do
   expect(Task.where(delegated: @user.id).exists?).not_to be_truthy
-  @not_delegated_task = new_task
+  @other_user = create_user(0)
+  @other_task = create_task(@other_user)
 end
 
 
@@ -41,7 +37,8 @@ end
 Quando("preencho o formulario de tarefas") do
   fill_in("task[title]", with: 'Jogar lixo fora')
   fill_in("task[description]", with: 'Jogar o lixo fora para nao apodrecer')
-  select(@user.name, :from => 'task[delegated]')
+  select @user.name, :from => 'task[delegated]'
+
   end
 
 Quando("preencho o formulario de tarefas sem delegado") do
@@ -55,17 +52,19 @@ end
 
 Quando("tento concluir minha tarefa") do
    visit tasks_path
-   @page_task_id = page.first(:css, "tr#task-values td.id").text
-   td = page.first(:css, "tr#task-values td a#complete").click
+   page.find(:css, "tr#task-values td.id", text: @own_task.id.to_s).
+        find(:xpath, './parent::tr').
+        find(:css, "td a#complete").click
+   
    expect(page).to have_content("Tarefa concluida com sucesso.")
 end
 
 Quando("tarefa esta alocada para mim") do
- expect{Task.find(@delegated_task.id)}.not_to raise_exception
+ expect{Task.find(@own_task.id)}.not_to raise_exception
 end
 
 Quando("tarefa nao alocada para mim") do
- expect(Task.find(@not_delegated_task.id).delegated).not_to eq(@user.name) 
+ expect(Task.find(@other_task.id).delegated).not_to eq(@user.name) 
 end
 
 
@@ -80,9 +79,12 @@ Então("devo ver mensagem de erro") do
 end
 
 Então("tarefa deve ser concluida") do
-  expect(Task.find(@page_task_id).status).to eq(1)
+  expect(Task.find(@own_task.id).status).to eq('completed')
 end
 
 Então("não vejo o link para conclui-la") do
-  expect{page.first(:css, "tr#task-values td a#complete")}.to raise_error(Capybara::ExpectationNotMet)
+  tr = page.find(:css, "tr#task-values td.id", text: @own_task.id).
+            find(:xpath, './parent::tr').has_css?('tr#task-values td a#complete')
+   
+  expect(tr).to be_falsy
 end
