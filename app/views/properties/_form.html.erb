@@ -1,8 +1,9 @@
 <%= form_for(@property) do |f| %>
   <% if @property.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@property.errors.count, "error") %> prohibited this property from being saved:</h2>
-
+      <h2> 
+         <%= pluralize(@property.errors.count, 'erro') %>
+      </h2>
       <ul>
       <% @property.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -43,9 +44,9 @@
   
   <div class="field">
     <%= f.label 'Proprietário' %><br>
-    <%= f.collection_select(:proprietary_id, User.all, :id, :name, {}, {id: "proprietary_id_select"}) %>            
+    <%= f.collection_select(:proprietary_id, User.where(user_type: 1), :id, :name, {}, {id: "proprietary_id_select"}) %>            
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Criar Propriedade" %>
   </div>
 <% end %>
