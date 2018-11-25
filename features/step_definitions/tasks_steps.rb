@@ -5,7 +5,6 @@ Dado("sou usuario cadastrado") do
 end
 
 Dado('sou usuario logado') do
-  sign_up
   login
 end
 
@@ -80,7 +79,7 @@ Então("devo ver mensagem de erro") do
 end
 
 Então("tarefa deve ser concluida") do
-  expect(Task.find(@page_task_id).status).to eq(1)
+  expect(Task.find(@page_task_id).status).to eq('completed')
 end
 
 Então("não vejo o link para conclui-la") do

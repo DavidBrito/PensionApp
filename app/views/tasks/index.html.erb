@@ -23,7 +23,7 @@
         <td class="creation_date"><%= task.created_at.strftime('%d-%m-%Y') %></td>
         <td class="status"><%= task.status %></td>
         
-        <td><% if task.status == 0 %>
+        <td><% if task.status == 'uncompleted' %>
             <%= link_to 'Concluir', completed_task_path(task), method: :put , id: 'complete' %>
             <% end %></td>
         <td><%= link_to 'Mostrar', task %></td>

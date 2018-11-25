@@ -2,25 +2,23 @@ module LoginHelper
 
 # Helpers sobre usuários
 
-def build_user(password='password')
-  @user ||= FactoryBot.build(:user, password: password, password_confirmation: password)
+def build_user()
+  @user ||= FactoryBot.build(:user)
 end
 
-def create_user(password='password')
-  @user ||= FactoryBot.create(:user, password: password, password_confirmation: password)
+def create_user()
+  @user ||= FactoryBot.create(:user)
 end
 
 def sign_up
   password = "password"
-  user = build_user(password)
-  
-  delete_user(user) if User.exists?(user.id)
+  build_user
   
   visit new_user_registration_path
   
-  fill_in "user[name]", with: user[:name]
-  fill_in "user[cpf]", with: user[:cpf]
-  fill_in "user[email]", with: user[:email]
+  fill_in "user[name]", with: @user[:name]
+  fill_in "user[cpf]", with: @user[:cpf]
+  fill_in "user[email]", with: @user[:email]
   
   select('tenant', :from => 'user[user_type]')
   
@@ -30,22 +28,24 @@ def sign_up
   click_on "Cadastrar"
   
   expect(page).to have_content("Welcome! You have signed up successfully.")
+  
 end
 
-def login
+def login()
   visit destroy_user_session_path
   visit new_user_session_path
   
-  password = "password"
-  user = build_user(password)
+  create_user
   
-  fill_in("user_email", with: user[:email])
+  password = "password"
+ 
+  fill_in("user_email", with: @user[:email])
   fill_in("user_password", with: password)
+  
   click_button "Log in"
   
   expect(page).not_to have_content("Invalid Email or password")
   expect(page).to have_current_path(homepage_path)
-
 end
 
 def delete_user(user)
