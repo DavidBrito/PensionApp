@@ -1,0 +1,25 @@
+.dash-menu {
+    height: 800px;
+    background:#025373;
+
+    h2 {
+        padding: 60px 20px 10px 20px;
+        color:#fff;
+    }
+    
+    ul {
+        list-style:none;
+        li {
+            margin: 15px 0;
+        }
+        
+        a {
+            font-size:1.1em;
+            color: #ccc;
+            &:hover {
+                
+            }
+        }
+    }
+
+}

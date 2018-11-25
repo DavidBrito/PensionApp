@@ -1,7 +1,9 @@
 class TasksController < ApplicationController
+  layout "dashboard"
   before_action :set_task, only: [:show, :edit, :update, :destroy, :completed]
   before_action :authenticate_user!
   
+
   # GET /tasks
   # GET /tasks.json
   def index
