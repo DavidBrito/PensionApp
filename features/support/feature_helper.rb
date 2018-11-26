@@ -23,6 +23,15 @@ def build_employee
   return FactoryBot.build(:employee)
 end
 
+def create_room(property)
+  return FactoryBot.create(:room, property: property)
+end
+
+def build_room(property)
+  return FactoryBot.build(:room, property: property)
+end
+
+
 ###
 
 def login(type)

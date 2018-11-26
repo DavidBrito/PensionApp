@@ -18,4 +18,18 @@ module ApplicationHelper
       return ""  
     
   end
+  
+  def find_property_by_user(user)
+    # dado um usuario
+    query = %{
+       SELECT p.id
+       FROM properties p
+       JOIN rooms r on r.property_id = p.id
+       JOIN vacancies v on v.room_id = r.id
+       WHERE v.user_id = #{user.id}
+    }.squish 
+    
+    return Property.find_by_sql(query)
+  end
+  
 end

@@ -1,24 +1,32 @@
-<p id="notice"><%= notice %></p>
+<h3>Visualizar Chamada de Manutenção</h3>
 
 <p>
-  <strong>User:</strong>
-  <%= @maintenance.user %>
+  <strong>Criador:</strong>
+  <%= find_user_name(@maintenance.owner_id) %>
 </p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Título:</strong>
   <%= @maintenance.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descrição</strong>
   <%= @maintenance.description %>
 </p>
 
 <p>
-  <strong>Status:</strong>
+  <strong>Resposta:</strong>
+  <%= @maintenance.response %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
   <%= @maintenance.status %>
 </p>
 
-<%= link_to 'Edit', edit_maintenance_path(@maintenance) %> |
-<%= link_to 'Back', maintenances_path %>
+<% if @maintenance.status == 'in_progress' && current_user.user_type == 'proprietary' %>
+  <%= link_to 'Concluir', completed_maintenance_path(@maintenance), method: :put , id: 'complete' %>
+<% end %>
+<br>
+<%= link_to 'Voltar', maintenances_path %>

@@ -1,33 +1,54 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Maintenances</h1>
+<h1>Chamadas de manutenção</h1>
 
 <table>
   <thead>
     <tr>
-      <th>User</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Status</th>
-      <th colspan="3"></th>
+      <th>Id</th>
+      <th>Criador</th>
+      <th>Título</th>
+      <th>Descrição</th>
+      <th>Estado</th>
+      <th>Resposta proprietário</th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @maintenances.each do |maintenance| %>
       <tr>
-        <td><%= maintenance.user %></td>
+        <td><%= maintenance.id %></td>
+        <td><%= find_user_name(maintenance.owner_id) %></td>
         <td><%= maintenance.title %></td>
         <td><%= maintenance.description %></td>
         <td><%= maintenance.status %></td>
-        <td><%= link_to 'Show', maintenance %></td>
-        <td><%= link_to 'Edit', edit_maintenance_path(maintenance) %></td>
-        <td><%= link_to 'Destroy', maintenance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= maintenance.response %></td>
+        <% if maintenance.status == 'in_progress' && current_user.user_type == 'proprietary' %>
+          
+         <td><%= link_to 'Concluir', completed_maintenance_path(maintenance), method: :put , id: 'complete' %></td>
+        
+        <% elsif  maintenance.status == 'open' && current_user.user_type == 'proprietary' %>
+         
+           <td><%= link_to 'Concluir', '#' ,data: {confirm: 'Necessário responder antes de concluir' } %></td>
+        <% else %>
+          <td></td>
+        <% end %>
+        
+        <td><%= link_to 'Visualizar', maintenance %></td>
+        <% if current_user.user_type == 'tenant' && current_user.id == maintenance.owner_id %>
+          <td><%= link_to 'Editar', edit_maintenance_path(maintenance), id: 'edit' %></td>
+        <% end %>
+         <% if current_user.user_type == 'proprietary' %>
+          <td><%= link_to 'Responder', edit_maintenance_path(maintenance), id: 'response' %></td>
+        <% end %>
+        <% if current_user.user_type == 'proprietary' || current_user.id == maintenance.owner_id %>
+        <td><%= link_to 'Deletar', maintenance, method: :delete, data: { confirm: 'Tem certeza?' }, id: 'delete' %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Maintenance', new_maintenance_path %>
+<% if current_user.user_type == 'tenant' %>
+  <%= link_to 'Nova chamada de manutenção ', new_maintenance_path %>
+<% end %>

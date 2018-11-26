@@ -70,6 +70,6 @@ class VacanciesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vacancy_params
-      params.require(:vacancy).permit(:value, :status, :room_id, :vacancy_owner_id)
+      params.require(:vacancy).permit(:value, :status, :room_id, :user_id)
     end
 end
