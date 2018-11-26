@@ -1,36 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Employees</h1>
-
-<table>
-  <thead>
-    <tr>
-     <th>Id</th>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Cpf</th>
-      <th>Contact</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @employees.each do |employee| %>
-      <tr>
-        <td><%= employee.id %></td>
-        <td><%= employee.first_name %></td>
-        <td><%= employee.last_name %></td>
-        <td><%= employee.cpf %></td>
-        <td><%= employee.contact %></td>
-        <td><%= link_to 'Editar', edit_employee_path(employee) %></td>
-        <td><%= link_to 'Deletar', employee, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<h1 class="dash-title">Listing Employees</h1>
+<div class="table-responsive">
+    <table class="table col-12 table-hover table-striped">
+      <thead>
+        <tr>
+         <th>Id</th>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Cpf</th>
+          <th>Contact</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @employees.each do |employee| %>
+          <tr>
+            <td><%= employee.id %></td>
+            <td><%= employee.first_name %></td>
+            <td><%= employee.last_name %></td>
+            <td><%= employee.cpf %></td>
+            <td><%= employee.contact %></td>
+            <td><%= link_to 'Editar', edit_employee_path(employee), class: "btn btn-primary btn-tasks" %></td>
+            <td><%= link_to 'Deletar', employee, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-danger btn-tasks" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
 <br>
 
-<%= link_to 'Novo Funcionário', new_employee_path %>
-<br>
-<%= link_to 'Voltar', proprietary_path %>
+<%= link_to 'Novo Funcionário', new_employee_path , class: "btn btn-primary btn-tasks" %>
+<%= link_to 'Voltar', proprietary_path, class: "btn btn-light btn-tasks" %>
