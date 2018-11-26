@@ -1,35 +1,34 @@
 <p id="notice"><%= notice %></p>
+<h1 class="dash-title">Listing Users</h1>
+<div class="table-responsive">
+    <table class="table col-12 table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Cpf</th>
+          <th>User type</th>
+          <th>Email</th>
+          <th>Phone Numbers</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.cpf %></td>
+            <td><%= user.user_type %></td>
+            <td><%= user.email %></td>
+            <td><%= user.phone_number.map { |x| x.phone_number }.join(',').html_safe %></td>
+            <td><%= link_to 'Editar', edit_user_path(user), class: "btn btn-primary btn-tasks" %></td>
+            <td><%= link_to 'Deletar', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-tasks" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
 
-<h1>Listing Users</h1>
+<%= link_to 'Novo Usuário', new_user_path, class: "btn btn-primary" %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Cpf</th>
-      <th>User type</th>
-      <th>Email</th>
-      <th>Phone Numbers</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.cpf %></td>
-        <td><%= user.user_type %></td>
-        <td><%= user.email %></td>
-        <td><%= user.phone_number.map { |x| x.phone_number }.join(',').html_safe %></td>
-        <td><%= link_to 'Editar', edit_user_path(user) %></td>
-        <td><%= link_to 'Deletar', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<%= link_to 'Novo Usuário', new_user_path %>
-<br>
-<%= link_to 'Voltar', proprietary_path %>
+<%= link_to 'Voltar', proprietary_path, class: "btn btn-light" %>
