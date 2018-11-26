@@ -87,6 +87,11 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:title, :description, :created_at, :delegated, :status, :owner_id)
+      tp = params.require(:task).permit(:title, :description, :created_at, :delegated, :status, :owner_id)
+      
+      # passando apenas attr status de string para integer
+      tp[:status] = params[:task][:status].to_i
+      
+      return tp
     end
 end

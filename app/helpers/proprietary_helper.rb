@@ -1,0 +1,2 @@
+module ProprietaryHelper
+end

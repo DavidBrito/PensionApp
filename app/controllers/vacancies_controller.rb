@@ -1,6 +1,7 @@
 class VacanciesController < ApplicationController
   before_action :set_vacancy, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
+  
   # GET /vacancies
   # GET /vacancies.json
   def index
@@ -56,7 +57,7 @@ class VacanciesController < ApplicationController
   def destroy
     @vacancy.destroy
     respond_to do |format|
-      format.html { redirect_to vacancies_url, notice: 'Vacancy was successfully destroyed.' }
+      format.html { redirect_to properties_url, notice: 'Vacancy was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +70,6 @@ class VacanciesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vacancy_params
-      params.require(:vacancy).permit(:value, :status, :room_id, :owner_id)
+      params.require(:vacancy).permit(:value, :status, :room_id, :vacancy_owner_id)
     end
 end

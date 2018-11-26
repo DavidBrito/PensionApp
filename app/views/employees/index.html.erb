@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+     <th>Id</th>
       <th>First name</th>
       <th>Last name</th>
       <th>Cpf</th>
@@ -16,13 +17,13 @@
   <tbody>
     <% @employees.each do |employee| %>
       <tr>
+        <td><%= employee.id %></td>
         <td><%= employee.first_name %></td>
         <td><%= employee.last_name %></td>
         <td><%= employee.cpf %></td>
         <td><%= employee.contact %></td>
-        <td><%= link_to 'Show', employee %></td>
-        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Editar', edit_employee_path(employee) %></td>
+        <td><%= link_to 'Deletar', employee, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +31,6 @@
 
 <br>
 
-<%= link_to 'New Employee', new_employee_path %>
+<%= link_to 'Novo Funcionário', new_employee_path %>
+<br>
+<%= link_to 'Voltar', proprietary_path %>

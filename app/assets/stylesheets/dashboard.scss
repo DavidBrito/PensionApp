@@ -2,7 +2,7 @@
     background:#023E73;
     padding: 10px 0;
     color:#fff;
-    
+    box-shadow:7px 8px 30px -7px #888888;
     a {
         color:#fff !important;
     }
@@ -15,13 +15,16 @@
 .dash-menu {
     height: 800px;
     background:#025373;
-
+    box-shadow:-33px 53px 36px 34px #888888;
     h2 {
-        padding: 60px 20px 10px 20px;
+        text-align:center;
+        font-size:2.4em;
+        padding: 60px 0 30px 0;
         color:#fff;
     }
     
     ul {
+        display:block;
         list-style:none;
         li {
             margin: 15px 0;

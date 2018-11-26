@@ -102,7 +102,7 @@ RSpec.describe TasksController, type: :controller do
 
   describe "PUT #completed" do
     it "should change task status" do   
-      expect{ put :completed, id: @task.id; @task.reload }.to change(@task, :status).to(1)
+      expect{ put :completed, id: @task.id; @task.reload }.to change(@task, :status).to('completed')
     end    
   end
 end

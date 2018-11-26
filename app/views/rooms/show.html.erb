@@ -7,8 +7,8 @@
 
 <p>
   <strong>Property:</strong>
-  <%= @room.property_id %>
+  <%= find_property_name(@room.property_id) %>
 </p>
 
-<%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Back', rooms_path %>
+<%= link_to 'Editar', edit_room_path(@room) %> |
+<%= link_to 'Voltar', properties_path %>

@@ -1,10 +1,11 @@
 FactoryBot.define do
   factory :property do
-    postal_code { "MyString" }
-    address { "MyString" }
-    number { 1 }
-    city { "MyString" }
-    state { "MyString" }
-    proprietary_id { 1 }
+    name {"Pensionato"}
+    postal_code { "01513030" }
+    address { "Rua 9 de Julho" }
+    number { 1024 }
+    city { "Recife" }
+    state { "Pernambuco" }
+    association :proprietary, factory: :proprietary, strategy: :create
   end
 end
