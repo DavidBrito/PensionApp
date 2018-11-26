@@ -17,7 +17,7 @@
 
   <tbody>
     <% @properties.each do |property| %>
-      <tr>
+      <tr id="properties-values">
         <td id="id"><%= property.id %></td>
         <td id="name"><%= property.name %></td>
         <td id="postal_code"><%= property.postal_code %></td>
@@ -28,7 +28,7 @@
         <td id="proprietary_name"><%= find_user_name(property.proprietary_id) %></td>
         
         <td><%= link_to 'Editar', edit_property_path(property), id: 'edit' %></td>
-        <td><%= link_to 'Exc,hjr', property, method: :delete, data: { confirm: 'Tem certeza?' }, id: 'destroy' %></td>
+        <td><%= link_to 'Deletar', property, method: :delete, data: { confirm: 'Tem certeza?' }, id: 'destroy' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -50,12 +50,12 @@
 
   <tbody>
     <% @rooms.each do |room| %>
-      <tr>
-        <td><%= room.id %></td>
-        <td><%= room.number %></td>
-        <td><%= find_property_name(room.property_id) %></td>
-        <td><%= link_to 'Edit', edit_room_path(room) %></td>
-        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <tr id="rooms-values">
+        <td id='id'><%= room.id %></td>
+        <td id='number'><%= room.number %></td>
+        <td id='property-name'><%= find_property_name(room.property_id) %></td>
+        <td><%= link_to 'Editar', edit_room_path(room), id: 'edit' %></td>
+        <td><%= link_to 'Delete', room, method: :delete, data: { confirm: 'Tem certeza?' }, id: 'delete' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -79,15 +79,15 @@
 
   <tbody>
     <% @vacancies.each do |vacancy| %>
-      <tr>
-        <td><%= vacancy.id %></td>
-        <td><%= vacancy.value %></td>
-        <td><%= vacancy.status %></td>
-        <td><%= vacancy.room_id %></td>
-        <td><%= find_user_name(vacancy.vacancy_owner_id) %></td>
+      <tr id='vacancies-values'>
+        <td id='id'><%= vacancy.id %></td>
+        <td id='value'><%= vacancy.value %></td>
+        <td id='status'><%= vacancy.status %></td>
+        <td id='room-id'><%= vacancy.room_id %></td>
+        <td id='user-name'><%= find_user_name(vacancy.vacancy_owner_id) %></td>
         
-        <td><%= link_to 'Editar', edit_vacancy_path(vacancy) %></td>
-        <td><%= link_to 'Deletar', vacancy, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+        <td><%= link_to 'Editar', edit_vacancy_path(vacancy), id: 'edit' %></td>
+        <td><%= link_to 'Deletar', vacancy, method: :delete, data: { confirm: 'Tem certeza?' }, id: 'delete' %></td>
       </tr>
     <% end %>
   </tbody>

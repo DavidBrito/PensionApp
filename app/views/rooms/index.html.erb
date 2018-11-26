@@ -5,8 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Number</th>
-      <th>Property</th>
+      <th>Número</th>
+      <th>Nome propriedade</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,10 +14,12 @@
   <tbody>
     <% @rooms.each do |room| %>
       <tr>
-        <td><%= room.number %></td>
-        <td><%= room.property_id %></td>
-        <td><%= link_to 'Edit', edit_room_path(room) %></td>
-        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td id='id'><%= room.id %></td> 
+        <td id='number'><%= room.number %></td>
+        <td id='property_name'><%= find_property_name(room.property_id) %></td>
+        
+        <td><%= link_to 'Editar', edit_room_path(room), id: 'edit' %></td>
+        <td><%= link_to 'Deletar', room, method: :delete, data: { confirm: 'Tem certeza?' }, id: 'delete' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -25,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Room', new_room_path %>
+<%= link_to 'Novo Quarto', new_room_path %>

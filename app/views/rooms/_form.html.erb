@@ -1,9 +1,9 @@
 <%= form_for(@room) do |f| %>
   <% if @room.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
-
-      <ul>
+      <h2> 
+         <%= pluralize(@room.errors.count, 'erro') %>
+      </h2>
       <% @room.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
@@ -12,15 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :number %><br>
+    <%= f.label 'Número' %><br>
     <%= f.number_field :number %>
   </div>
   
   <div class="field">
-    <%= f.label :property_id %><br>
+    <%= f.label 'Nome propriedade' %><br>
     <%= f.collection_select(:property_id, Property.all, :id, :name, {}, {id: "property_id_select"}) %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Criar Quarto'  %>
   </div>
 <% end %>

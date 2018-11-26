@@ -8,7 +8,15 @@ class User < ActiveRecord::Base
   has_many :maintenances
   has_many :properties
   
+  validates :name, presence: true
+  validates :cpf,  presence: true, 
+                   format: { with: /\A[+-]?\d+\z/ }, 
+                   length: { is: 11 }
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } 
+  
   validates_uniqueness_of :email, :case_sensitive => false 
+  validates_uniqueness_of :cpf, :case_sensitive => false 
+  
   validates_associated :properties
 
   enum user_type: [:tenant, :proprietary]
