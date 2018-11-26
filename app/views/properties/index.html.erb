@@ -1,105 +1,104 @@
-<h3> Propriedades </h4>
+<!-- proprietario-->
+<h3 class="dash-title"> Propriedades </h4>
+<div class="table-responsive">
+    <table class="table col-12 table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>CEP</th>
+          <th>Logradouro</th>
+          <th>Número</th>
+          <th>Cidade</th>
+          <th>Estado</th>
+          <th>Proprietário</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @properties.each do |property| %>
+          <tr>
+            <td id="id"><%= property.id %></td>
+            <td id="name"><%= property.name %></td>
+            <td id="postal_code"><%= property.postal_code %></td>
+            <td id="proprietary_name"><%= property.address %></td>
+            <td id="number"><%= property.number %></td>
+            <td id="city"><%= property.city %></td>
+            <td id="state"><%= property.state %></td>
+            <td id="proprietary_name"><%= find_user_name(property.proprietary_id) %></td>
+            <td><%= link_to 'Editar', edit_property_path(property), id: 'edit', class: "btn btn-primary btn-tasks" %></td>
+            <td><%= link_to 'Excluir', property, method: :delete, data: { confirm: 'Tem certeza?' }, id: 'destroy', class: "btn btn-danger btn-tasks" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+<%= link_to 'Nova Propriedade', new_property_path, class: "btn btn-primary btn-tasks" %>
+<%= link_to 'Voltar', proprietary_path, class: "btn btn-light btn-tasks" %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Nome</th>
-      <th>CEP</th>
-      <th>Logradouro</th>
-      <th>Número</th>
-      <th>Cidade</th>
-      <th>Estado</th>
-      <th>Proprietário</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!-- quartos -->
+<h3 class="dash-title mt-5">Quartos</h3>
+<div class="table-responsive">
+    <table class="table col-12 table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Número</th>
+          <th>Propriedade</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @rooms.each do |room| %>
+          <tr>
+            <td><%= room.id %></td>
+            <td><%= room.number %></td>
+            <td><%= find_property_name(room.property_id) %></td>
+            <td><%= link_to 'Edit', edit_room_path(room), class: "btn btn-primary btn-tasks" %></td>
+            <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-tasks" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+<%= link_to 'Novo Quarto', new_room_path, class: "btn btn-primary btn-tasks" %>
+<%= link_to 'Voltar', proprietary_path, class: "btn btn-light btn-tasks" %>
 
-  <tbody>
-    <% @properties.each do |property| %>
-      <tr>
-        <td id="id"><%= property.id %></td>
-        <td id="name"><%= property.name %></td>
-        <td id="postal_code"><%= property.postal_code %></td>
-        <td id="proprietary_name"><%= property.address %></td>
-        <td id="number"><%= property.number %></td>
-        <td id="city"><%= property.city %></td>
-        <td id="state"><%= property.state %></td>
-        <td id="proprietary_name"><%= find_user_name(property.proprietary_id) %></td>
-        
-        <td><%= link_to 'Editar', edit_property_path(property), id: 'edit' %></td>
-        <td><%= link_to 'Exc,hjr', property, method: :delete, data: { confirm: 'Tem certeza?' }, id: 'destroy' %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<h3>Quartos</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Número</th>
-      <th>Propriedade</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @rooms.each do |room| %>
-      <tr>
-        <td><%= room.id %></td>
-        <td><%= room.number %></td>
-        <td><%= find_property_name(room.property_id) %></td>
-        <td><%= link_to 'Edit', edit_room_path(room) %></td>
-        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<h3>Vagas</h3>
-
-<table>
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Valor</th>
-      <th>Estado</th>
-      <th>Quarto</th>
-      <th>Ocupante</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @vacancies.each do |vacancy| %>
-      <tr>
-        <td><%= vacancy.id %></td>
-        <td><%= vacancy.value %></td>
-        <td><%= vacancy.status %></td>
-        <td><%= vacancy.room_id %></td>
-        <td><%= find_user_name(vacancy.vacancy_owner_id) %></td>
-        
-        <td><%= link_to 'Editar', edit_vacancy_path(vacancy) %></td>
-        <td><%= link_to 'Deletar', vacancy, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<!-- vagas -->
+<h3 class="dash-title mt-5">Vagas</h3>
+<div class="table-responsive">
+    <table class="table col-12 table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Valor</th>
+          <th>Estado</th>
+          <th>Quarto</th>
+          <th>Ocupante</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @vacancies.each do |vacancy| %>
+          <tr>
+            <td><%= vacancy.id %></td>
+            <td><%= vacancy.value %></td>
+            <td><%= vacancy.status %></td>
+            <td><%= vacancy.room_id %></td>
+            <td><%= find_user_name(vacancy.vacancy_owner_id) %></td>
+            
+            <td><%= link_to 'Editar', edit_vacancy_path(vacancy), class: "btn btn-primary btn-tasks" %></td>
+            <td><%= link_to 'Deletar', vacancy, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-danger btn-tasks" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+<%= link_to 'Nova Vaga', new_vacancy_path, class: "btn btn-primary btn-tasks" %>
+<%= link_to 'Voltar', proprietary_path, class: "btn btn-light btn-tasks" %>
 
 
-<br>
-<%= link_to 'Nova Propriedade', new_property_path %>
-<br>
-<%= link_to 'Novo Quarto', new_room_path %>
-<br>
-<%= link_to 'Nova Vaga', new_vacancy_path %>
-<br>
-<%= link_to 'Voltar', proprietary_path %>
+
 

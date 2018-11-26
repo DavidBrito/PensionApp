@@ -1,11 +1,12 @@
 // css global do sistema
 
 .dash-title {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+    width:100%;
 }
 
-.dash-content-p {
-    
+.btn-primary, .btn-danger {
+    color:#fff !important;
 }
 #flash_error {
     background: #F8D7DA;
