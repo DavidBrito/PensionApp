@@ -1,6 +1,7 @@
 class VacanciesController < ApplicationController
   before_action :set_vacancy, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  layout "dashboard"
   
   # GET /vacancies
   # GET /vacancies.json
