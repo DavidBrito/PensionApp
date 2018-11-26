@@ -1,39 +1,39 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nome:</strong>
   <%= @property.name %>
 </p>
 
 <p>
-  <strong>Postal code:</strong>
+  <strong>Código postal:</strong>
   <%= @property.postal_code %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong>Logradouro:</strong>
   <%= @property.address %>
 </p>
 
 <p>
-  <strong>Number:</strong>
+  <strong>Número:</strong>
   <%= @property.number %>
 </p>
 
 <p>
-  <strong>City:</strong>
+  <strong>Cidade:</strong>
   <%= @property.city %>
 </p>
 
 <p>
-  <strong>State:</strong>
+  <strong>Estado:</strong>
   <%= @property.state %>
 </p>
 
 <p>
-  <strong>Proprietary:</strong>
+  <strong>Proprietário:</strong>
   <%= find_user_name(@property.proprietary_id) %>
 </p>
 
-<%= link_to 'Edit', edit_property_path(@property) %> |
-<%= link_to 'Back', properties_path %>
+<%= link_to 'Editar', edit_property_path(@property) %> |
+<%= link_to 'Voltar', properties_path %>

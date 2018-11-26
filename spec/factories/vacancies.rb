@@ -1,8 +1,13 @@
 FactoryBot.define do
   factory :vacancy do
-    value { "9.99" }
-    status { 1 }
-    room_id { 1 }
-    owner_id { 1 }
+    value { 320.to_f }
+    status { 0 }
+    association :room, factory: :room, strategy: :create
+    
+    factory :vacancy_occupied do
+      status { 1 }
+      association :user, factory: :tenant, strategy: :create
+    end
+    
   end
 end

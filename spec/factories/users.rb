@@ -3,7 +3,7 @@ FactoryBot.define do
   # gera nome, email e cpf unicos para cada chamada de generate
   
   sequence(:email) {|n| ('a'..'z').to_a.shuffle[0,8].join + "#{n}@email.com" }
-  sequence(:cpf) {|n| '%010d' % rand(10 ** 11) }
+  sequence(:cpf) {|n| '%011d' % rand(10 ** 11).to_s }
   sequence(:name) {|n| "Jonh " + ('a'..'z').to_a.shuffle[0,3].join + "#{n}" }
   
   factory :user do

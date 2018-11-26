@@ -1,10 +1,10 @@
+
 <div class="tasks-cadastro col-6 offset-3">
     <div class="col-12">
         <%= form_for(@employee) do |f| %>
           <% if @employee.errors.any? %>
             <div id="error_explanation">
-              <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
-        
+               <%= pluralize(@employee.errors.count, 'erro') %>         
               <ul>
               <% @employee.errors.full_messages.each do |message| %>
                 <li><%= message %></li>
@@ -14,23 +14,23 @@
           <% end %>
         
           <div class="field cadastro-field">
-            <%= f.label :first_name %><br>
+            <%= f.label 'Primeiro nome' %><br>
             <%= f.text_field :first_name %>
           </div>
           <div class="field cadastro-field">
-            <%= f.label :last_name %><br>
+            <%= f.label 'Nome de família' %><br>
             <%= f.text_field :last_name %>
           </div>
           <div class="field cadastro-field">
-            <%= f.label :cpf %><br>
+            <%= f.label 'CPF' %><br>
             <%= f.text_field :cpf %>
           </div>
           <div class="field cadastro-field">
-            <%= f.label :contact %><br>
+            <%= f.label 'Contato' %><br>
             <%= f.text_field :contact %>
           </div>
           <div class="actions">
-            <%= f.submit "Criar Employee", class: "btn btn-success" %>
+            <%= f.submit "Criar Funcionário", class: "btn btn-success" %>
           </div>
         <% end %>
     </div>

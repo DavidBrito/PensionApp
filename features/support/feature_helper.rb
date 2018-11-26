@@ -1,5 +1,7 @@
 module FeatureHelper
 
+# Criação de objetos
+
 def create_user(type)
   return FactoryBot.create(:proprietary) if type == 1
   return FactoryBot.create(:tenant) if type == 0 
@@ -12,6 +14,25 @@ end
 def create_property(user)
   return FactoryBot.create(:property, proprietary: user)
 end
+
+def create_employee
+  return FactoryBot.create(:employee)
+end
+
+def build_employee
+  return FactoryBot.build(:employee)
+end
+
+def create_room(property)
+  return FactoryBot.create(:room, property: property)
+end
+
+def build_room(property)
+  return FactoryBot.build(:room, property: property)
+end
+
+
+###
 
 def login(type)
   visit new_user_session_path

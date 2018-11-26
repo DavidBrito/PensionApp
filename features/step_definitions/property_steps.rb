@@ -47,8 +47,8 @@ Quando("tento adicionar propriedade com informacoes incorretas") do
 end
 
 Quando("clico editar minha propriedade cadastrada") do
-  @property_id = page.first(:css, "tr td#id").text.to_i
-  page.first(:css, "tr td a#edit").click
+  @property_id = page.first(:css, "tr#properties-values td#id").text.to_i
+  page.first(:css, "tr#properties-values td a#edit").click
   expect(page).to have_current_path(edit_property_path(@property_id))
 end
 
@@ -61,7 +61,7 @@ Quando("deixo de inserir nova informacao em propriedade") do
 end
 
 Quando("clico em deletar minha propriedade") do
-  page.first(:css, "tr td a#destroy").click
+  page.first(:css, "tr#properties-values td a#destroy").click
   expect(page).to have_content("Propriedade excluída com sucesso.")
 end
 

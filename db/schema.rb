@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181124060607) do
+ActiveRecord::Schema.define(version: 20181126200055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20181124060607) do
     t.integer  "status",      default: 0
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.text     "response",    default: ""
   end
 
   add_index "maintenances", ["owner_id"], name: "index_maintenances_on_owner_id", using: :btree
@@ -109,16 +110,16 @@ ActiveRecord::Schema.define(version: 20181124060607) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "vacancies", force: :cascade do |t|
-    t.decimal  "value",            default: 0.0
-    t.integer  "status",           default: 0
-    t.integer  "room_id",                        null: false
-    t.integer  "vacancy_owner_id"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.decimal  "value",      default: 0.0
+    t.integer  "status",     default: 0
+    t.integer  "room_id",                  null: false
+    t.integer  "user_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   add_index "vacancies", ["room_id"], name: "index_vacancies_on_room_id", using: :btree
-  add_index "vacancies", ["vacancy_owner_id"], name: "index_vacancies_on_vacancy_owner_id", using: :btree
+  add_index "vacancies", ["user_id"], name: "index_vacancies_on_user_id", using: :btree
 
   add_foreign_key "employees_properties", "employees"
   add_foreign_key "employees_properties", "properties"
@@ -128,5 +129,5 @@ ActiveRecord::Schema.define(version: 20181124060607) do
   add_foreign_key "rooms", "properties", on_delete: :cascade
   add_foreign_key "tasks", "users", column: "owner_id", on_delete: :cascade
   add_foreign_key "vacancies", "rooms", on_delete: :cascade
-  add_foreign_key "vacancies", "users", column: "vacancy_owner_id", on_delete: :cascade
+  add_foreign_key "vacancies", "users", on_delete: :cascade
 end

@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   scope '/proprietary' do
     resources :users
     resources :properties
-    resources :maintenances
     resources :employees
     resources :rooms
     resources :vacancies
@@ -20,6 +19,8 @@ Rails.application.routes.draw do
   get 'homepage' => 'homepage#index'
   get 'proprietary' => 'proprietary#index'
 
+  match '/maintenances/:id/completed' => 'maintenances#completed', as: 'completed_maintenance', via: :put 
   match '/tasks/:id/completed' => 'tasks#completed', as: 'completed_task', via: :put 
+  
   root 'welcome#index'
 end
