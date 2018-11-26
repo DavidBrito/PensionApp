@@ -1,24 +1,22 @@
-<div class="container tasks">
-    <div class="row">
-        <h1 class="tasks-title">Lista de Tarefas</h1>
-          <div class="box box-tasks col-12">
-            <table>
+        <h1 class="dash-title">Lista de Tarefas</h1>
+          <div class="table-responsive">
+            <table class="table col-12 table-hover">
               <thead>
-                <tr>
-                  <th>Id</th>
-                  <th>Criador</th>
-                  <th>Título</th>
-                  <th>Descrição</th>
-                  <th>Delegado</th>
-                  <th>Data de criação</th>
-                  <th>Estado</th>
+                <tr class="table-light">
+                  <th >Id</th>
+                  <th >Criador</th>
+                  <th >Título</th>
+                  <th >Descrição</th>
+                  <th >Delegado</th>
+                  <th >Data de criação</th>
+                  <th >Estado</th>
                   <th colspan="3"></th>
                 </tr>
               </thead>
               <tbody>
                 <% @tasks.each do |task| %>
                   <tr id="task-values">
-                    <td class="id"><%= task.id %></td>
+                    <td scope="row" class="id"><%= task.id %></td>
                     <td class="name"> <%= find_user_name(task.owner_id) %> </td>
                     <td class="title"><%= task.title %></td>
                     <td class="description"><%= task.description %></td>
@@ -27,11 +25,11 @@
                     <td class="status"><%= task.status %></td>
                     
                     <td class="bg-none"><% if if task.status == 'uncompleted' && (current_user.id == task.owner_id || current_user.id == task.delegated) %>
-                        <%= link_to 'Concluir', completed_task_path(task), method: :put , id: 'complete', class: "btn btn-success"  %>
+                        <%= link_to 'Concluir', completed_task_path(task), method: :put , id: 'complete', class: "btn btn-success btn-tasks"  %>
                         <% end %></td>
-                    <td class="bg-none"><%= link_to 'Mostrar', task, class: "btn btn-info" %></td>
-                    <td class="bg-none"><%= link_to 'Editar', edit_task_path(task), class: "btn btn-primary" %></td>
-                    <td class="bg-none"><%= link_to 'Destruir', task, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-danger" %></td>
+                    <td class="bg-none"><%= link_to 'Mostrar', task, class: "btn btn-info btn-tasks" %></td>
+                    <td class="bg-none"><%= link_to 'Editar', edit_task_path(task), class: "btn btn-primary btn-tasks" %></td>
+                    <td class="bg-none"><%= link_to 'Destruir', task, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-danger btn-tasks" %></td>
                   </tr>
                 <% end %>
                 <% end %>
@@ -42,5 +40,3 @@
         <%= link_to 'Nova Tarefa', new_task_path, class: "btn btn-primary" %>
         
         <%= link_to 'Voltar', homepage_path, class: "btn btn-light" %>
-    </div>
-</div>
