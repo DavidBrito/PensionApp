@@ -2,7 +2,7 @@
 
 <p>
   <strong>Criador:</strong>
-  <%= find_user_name(@task.user_id) %>
+  <%= find_user_name(@task.owner_id) %>
 </p>
 
 <p>
@@ -29,6 +29,7 @@
   <strong>Estado:</strong>
   <%= @task.status %>
 </p>
+
 
 <%= link_to 'Editar', edit_task_path(@task) %> |
 <%= link_to 'Voltar', tasks_path %>

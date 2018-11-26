@@ -22,6 +22,6 @@ RSpec.describe Task, :type => :model do
   end
   
   context "Associations" do
-    it { should belong_to :user }
+    it { should belong_to :owner }
   end
 end

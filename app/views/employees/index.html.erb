@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Employees</h1>
+
+<table>
+  <thead>
+    <tr>
+     <th>Id</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Cpf</th>
+      <th>Contact</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td id='id'><%= employee.id %></td>
+        <td id='first_name'><%= employee.first_name %></td>
+        <td id='last_name'><%= employee.last_name %></td>
+        <td id='cpf'><%= employee.cpf %></td>
+        <td id='contact'><%= employee.contact %></td>
+        <td><%= link_to 'Editar', edit_employee_path(employee), id: 'edit' %></td>
+        <td><%= link_to 'Deletar', employee, method: :delete, data: { confirm: 'Tem certeza?' }, id: 'delete' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo Funcionário', new_employee_path %>
+<br>
+<%= link_to 'Voltar', proprietary_path %>

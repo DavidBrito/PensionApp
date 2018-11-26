@@ -1,0 +1,24 @@
+<h3> Visualizar Usuário <h3>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Cpf:</strong>
+  <%= @user.cpf %>
+</p>
+
+<p>
+  <strong>Tipo de usuário:</strong>
+  <%= @user.user_type %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<%= link_to 'Editar', edit_user_path(@user) %> |
+<%= link_to 'Voltar', users_path %>

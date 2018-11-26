@@ -1,39 +1,58 @@
+
+<div class="container cadastro">
 <h2>Sign up</h2>
+<%= resource.build_phone_number if resource.phone_number.nil? %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
   
-  <div class="field">
+  <div class="field cadastro-field">
     <%= f.label 'Nome' %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "Nome" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "Nome", placeholder: "Se nome" %>
   </div>
   
-  <div class="field">
+  <div class="field cadastro-field">
     <%= f.label 'CPF' %><br />
-    <%= f.text_field :cpf, autocomplete: "Cpf" %>
+    <%= f.text_field :cpf, autocomplete: "Cpf", placeholder: "Seu cpf" %>
   </div>
   
-  <div class="field">
+  <div class="field cadastro-field">
     <%= f.label 'Email' %><br />
-    <%= f.email_field :email, autocomplete: "Email" %>
+    <%= f.email_field :email, autocomplete: "Email", placeholder: "Seu email" %>
   </div>
-
-  <div class="field">
+  
+  <div class="field cadastro-field">
+    <%= f.fields_for :phone_number do |i| %>
+        <p><%= i.label :phone_number %><br />
+        <%= i.text_field :phone_number, autocomplete: "Phone Number", placeholder: "Seu telefone" %></p>
+    <% end %>
+  </div>
+  
+  <div class="field cadastro-field">
+    <%= f.label 'Tipo de usuário' %><br />
+    <%= f.select :user_type, User.user_types.keys.to_a %>
+  </div>
+  
+  <div class="field cadastro-field">
     <%= f.label 'Senha' %>
     <% if @minimum_password_length %>
     <em>(No mínimo <%= @minimum_password_length %> caracteres)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "Senha" %>
+    <%= f.password_field :password, autocomplete: "Senha", placeholder: "Sua senha" %>
   </div>
 
-  <div class="field">
+  <div class="field cadastro-field">
     <%= f.label 'Confirmar senha' %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "Se" %>
+    <%= f.password_field :password_confirmation, autocomplete: "Se", placeholder: "Repita sua senha" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Cadastrar" %>
+    <%= f.submit "Cadastrar", class: "btn btn-cadastro"%>
   </div>
 <% end %>
 
+<div class="text-center cadastro-link">
 <%= render "devise/shared/links" %>
+</div>
+
+</div>

@@ -1,0 +1,36 @@
+<h1>Usuários</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nome</th>
+      <th>Cpf</th>
+      <th>Tipo de usuário</th>
+      <th>Email</th>
+      <th>Telefone</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr id='users-values'>
+        <td id='id'><%= user.id %></td>
+        <td id='name'><%= user.name %></td>
+        <td id='cpf'><%= user.cpf %></td>
+        <td id='user-type'><%= user.user_type %></td>
+        <td id='email'><%= user.email %></td>
+        <td id='phone-number'><%= user.phone_number.map { |x| x.phone_number }.join(',').html_safe %></td>
+        
+        <td><%= link_to 'Visualizar', user_path(user), id: 'show' %></td>
+        <td><%= link_to 'Deletar', user, method: :delete, data: { confirm: 'Tem certeza que deseja deletar usuário?' }, id: 'delete' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'Novo Usuário', new_user_path %>
+<br>
+<%= link_to 'Voltar', proprietary_path %>

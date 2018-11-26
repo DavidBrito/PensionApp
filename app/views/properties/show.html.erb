@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @property.name %>
+</p>
+
+<p>
+  <strong>Código postal:</strong>
+  <%= @property.postal_code %>
+</p>
+
+<p>
+  <strong>Logradouro:</strong>
+  <%= @property.address %>
+</p>
+
+<p>
+  <strong>Número:</strong>
+  <%= @property.number %>
+</p>
+
+<p>
+  <strong>Cidade:</strong>
+  <%= @property.city %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @property.state %>
+</p>
+
+<p>
+  <strong>Proprietário:</strong>
+  <%= find_user_name(@property.proprietary_id) %>
+</p>
+
+<%= link_to 'Editar', edit_property_path(@property) %> |
+<%= link_to 'Voltar', properties_path %>
