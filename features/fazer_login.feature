@@ -13,4 +13,4 @@ Scenario: Usuário tenta logar como usuario cadastrado e falha
 Given estou na pagina de login
 When preencho os dados do login sem ser cadastrado
 And clico em "Log in"
-Then devo ver mensagem de erro
+Then ver mensagem de erro
