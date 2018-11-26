@@ -1,11 +1,36 @@
-<h1> Área do proprietário </h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-10">   
+            <h1 class="text-center">Área do proprietário </h1>
+            
+            <div class="mt-5">
+                <h2>Usuários<h2>
+                <p class="dash-paragrafo">Para cadastrar, editar e excluir usuários click no link a seguir</p>
+                <p><%= link_to 'Usuários', users_path, class: "btn btn-primary btn-tasks" %></p>
+            </div>
+            <div class="mt-5">
+                <h2>Propriedades<h2>
+                <p class="dash-paragrafo">Para cadastrar, editar e excluir propriedades, quartos e vagas click no link a seguir</p>
+                <p><%= link_to 'Propriedades', properties_path, class: "btn btn-primary btn-tasks" %></p>
+            </div>
+            <div class="mt-5">
+                <h2>Empregados<h2>
+                <p class="dash-paragrafo">Para cadastrar, editar e excluir empregados click no link a seguir</p>
+                <p><%= link_to 'Empregados', employees_path, class: "btn btn-primary btn-tasks" %></p>
+            </div>
+            <div class="mt-5">
+                <h2>Empregados<h2>
+                <p class="dash-paragrafo">Para cadastrar, editar e excluir chamadas de manutenção click no link a seguir</p>
+                <p><%= link_to 'Chamadas de Manutenção', homepage_path, class: "btn btn-primary btn-tasks" %></p>
+            </div>        
+            
+            <div class="text-center">
+                <p><%= link_to 'Voltar', homepage_path, class: "btn btn-light" %></p>
+            </div>
 
-<p><%= link_to 'Usuários', users_path %></p>
-<p><%= link_to 'Propriedades', properties_path %></p>
-<p><%= link_to 'Empregados', employees_path %></p>
-<p><%= link_to 'Chamadas de Manutenção' %></p>
+        </div>
+    </div>
+</div>
 
-
-<p><%= link_to 'Voltar', homepage_path %></p>
 
 

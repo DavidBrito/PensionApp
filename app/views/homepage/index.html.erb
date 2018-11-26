@@ -5,13 +5,13 @@
             
             <div class="mt-5">
                 <h2>Quadro de Tarefas<h2>
-                <p>Para Criar, Editar e Excluir Taferas click no link a seguir.</p>
+                <p class="dash-paragrafo">Para Criar, Editar e Excluir Taferas click no link a seguir.</p>
             <p><%= link_to 'Quadro de tarefas', tasks_path, class: "btn btn-primary btn-tasks" %></p>
             </div>
             
             <div class="mt-5">
                 <h2>Área do Prorpietário</h2>
-                <p>Para ter acesso a todas as funcionalidades disponiveis para o proprietário, como administração
+                <p class="dash-paragrafo">Para ter acesso a todas as funcionalidades disponiveis para o proprietário, como administração
                     de moradores, propriedades, empregados e chamada para manutenção click no link a seguir.
                 </p>
                <% if current_user.user_type == 'proprietary' %>
