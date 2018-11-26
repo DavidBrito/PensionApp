@@ -16,8 +16,8 @@
                 Logado como: <strong><%= current_user.name %></strong>
             </div>
             <div class="mr-5">
-                <%= link_to 'Editar perfil', edit_user_registration_path, class: "btn btn-outline-primary" %> 
-                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-outline-danger" %>
+                <%= link_to 'Editar perfil', edit_user_registration_path, class: "btn btn-primary" %> 
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
             </div>
         </div>
      <% else %>
@@ -36,10 +36,10 @@
     <div class="row">
         <div class="dash-menu col-2">
             <h2>PensionApp</h2>
-                <ul>
-                    <li><a class="icon-social-github" href="#"> Dashboard </a></li>
-                    <li><a class="icon-social-github" href="#"> Quadro de Avisos </a></li>
-                    <li><a class="icon-social-github" href="#"> Quadro de Tarefas </a></li>
+                <ul class="container-fluid">
+                    <li><%= link_to '  Dashboard', homepage_path, class: "icon-home" %></li>
+                    <li><%= link_to '  Quadro de Tarefas', tasks_path, class: "icon-calendar" %></li>
+                    <li><%= link_to '  Área do Proprietário', proprietary_path, class: "icon-briefcase" %></li> 
                 </ul>
         </div>
         
