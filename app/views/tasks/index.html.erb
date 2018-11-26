@@ -1,44 +1,46 @@
-<div class="offset-2">
-<h1>Lista de Tarefas</h1>
-
-  <div class="box box-tasks col-9">
-    <table>
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Criador</th>
-          <th>Título</th>
-          <th>Descrição</th>
-          <th>Delegado</th>
-          <th>Data de criação</th>
-          <th>Estado</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @tasks.each do |task| %>
-          <tr id="task-values">
-            <td class="id"><%= task.id %></td>
-            <td class="name"> <%= find_user_name(task.owner_id) %> </td>
-            <td class="title"><%= task.title %></td>
-            <td class="description"><%= task.description %></td>
-            <td class="delegated"><%= find_user_name(task.delegated) %></td>
-            <td class="creation_date"><%= task.created_at.strftime('%d-%m-%Y') %></td>
-            <td class="status"><%= task.status %></td>
+<div class="container tasks">
+    <div class="row">
+        <h1 class="tasks-title">Lista de Tarefas</h1>
+          <div class="box box-tasks col-12">
+            <table>
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Criador</th>
+                  <th>Título</th>
+                  <th>Descrição</th>
+                  <th>Delegado</th>
+                  <th>Data de criação</th>
+                  <th>Estado</th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @tasks.each do |task| %>
+                  <tr id="task-values">
+                    <td class="id"><%= task.id %></td>
+                    <td class="name"> <%= find_user_name(task.owner_id) %> </td>
+                    <td class="title"><%= task.title %></td>
+                    <td class="description"><%= task.description %></td>
+                    <td class="delegated"><%= find_user_name(task.delegated) %></td>
+                    <td class="creation_date"><%= task.created_at.strftime('%d-%m-%Y') %></td>
+                    <td class="status"><%= task.status %></td>
+                    
+                    <td class="bg-none"><% if if task.status == 'uncompleted' && (current_user.id == task.owner_id || current_user.id == task.delegated) %>
+                        <%= link_to 'Concluir', completed_task_path(task), method: :put , id: 'complete', class: "btn btn-success"  %>
+                        <% end %></td>
+                    <td class="bg-none"><%= link_to 'Mostrar', task, class: "btn btn-info" %></td>
+                    <td class="bg-none"><%= link_to 'Editar', edit_task_path(task), class: "btn btn-primary" %></td>
+                    <td class="bg-none"><%= link_to 'Destruir', task, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-danger" %></td>
+                  </tr>
+                <% end %>
+                <% end %>
+              </tbody>
+            </table>
             
-            <td class="bg-none"><% if if task.status == 'uncompleted' && (current_user.id == task.owner_id || current_user.id == task.delegated) %>
-                <%= link_to 'Concluir', completed_task_path(task), method: :put , id: 'complete', class: "btn btn-success"  %>
-                <% end %></td>
-            <td class="bg-none"><%= link_to 'Mostrar', task, class: "btn btn-info" %></td>
-            <td class="bg-none"><%= link_to 'Editar', edit_task_path(task), class: "btn btn-primary" %></td>
-            <td class="bg-none"><%= link_to 'Destruir', task, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-danger" %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-    <% end %>
-  </div>
-<%= link_to 'Nova Tarefa', new_task_path, class: "btn btn-primary" %>
-<br>
-<%= link_to 'Voltar', homepage_path %>
+          </div>
+        <%= link_to 'Nova Tarefa', new_task_path, class: "btn btn-primary" %>
+        
+        <%= link_to 'Voltar', homepage_path, class: "btn btn-light" %>
+    </div>
 </div>
