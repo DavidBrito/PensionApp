@@ -1,12 +1,8 @@
-<div class="container">
-<class="row">
-    <div>
-    <h1>Editar Tarefa</h1>
+    <h1 class="col-12 text-center">Editar Tarefa</h1>
     
     <%= render 'form' %>
     
-    <%= link_to 'Mostrar', @task %> |
-    <%= link_to 'Voltar', tasks_path %>
-    <div>
-</div>
-<div>
+    <h1 class="col-12 text-center mt-3">
+        <%= link_to 'Mostrar', @task, class: "btn btn-info" %> 
+        <%= link_to 'Voltar', tasks_path, class: "btn btn-light"  %>
+    </div>
