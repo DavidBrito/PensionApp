@@ -1,23 +1,23 @@
 #FEATURE FAZER LOGIN
 
-Given("estou na pagina de login") do
+Dado("que estou na pagina de login") do
    visit new_user_session_path
 end
 
-When("preencho os dados do login sendo cadastrado") do
+Quando("preencho os dados do login sendo cadastrado") do
   fill_in("user[email]", with: 'dcea@cin.ufpe.br')
   fill_in("user[password]", with: 'cincin')
 end
 
-When("preencho os dados do login sem ser cadastrado") do
+Quando("preencho os dados do login sem ser cadastrado") do
   fill_in("user[email]", with: 'vc@cin.ufpe.br')
   fill_in("user[password]", with: 'cincin')
 end
 
-Then("estou na pagina de usuario") do
+Então("estou na pagina de usuario") do
   visit homepage_path
 end
 
-Then("ver mensagem de erro") do
+Então("ver mensagem de erro") do
   expect(page).to have_content "Email ou senha inválida."
 end
