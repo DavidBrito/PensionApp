@@ -1,6 +1,7 @@
-<h1>Editing Employee</h1>
+<h1 class="text-center col-12">Editing Employee</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @employee %> |
-<%= link_to 'Back', employees_path %>
+<div class="col-12 text-center mt-3">
+    <%= link_to 'Show', @employee, class: "btn btn-info" %> 
+    <%= link_to 'Back', employees_path, class: "btn btn-light"  %>
+</div>

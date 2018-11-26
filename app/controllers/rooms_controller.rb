@@ -1,6 +1,8 @@
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  layout "dashboard"
+  
   # GET /rooms
   # GET /rooms.json
   def index

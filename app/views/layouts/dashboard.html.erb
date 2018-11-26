@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pensionapp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href="https://file.myfontastic.com/mGiYhDXiCVkhHCjddDw4ec/icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,400,500,700" rel="stylesheet">
+</head>
+<body>
+
+<div>
+     <% if user_signed_in? %>
+        <div class="dash-header container-fluid d-flex justify-content-between align-items-center">
+            <div class="ml-5">
+                Logado como: <strong><%= current_user.name %></strong>
+            </div>
+            <div class="mr-5">
+                <%= link_to 'Editar perfil', edit_user_registration_path, class: "btn btn-primary" %> 
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+            </div>
+        </div>
+     <% else %>
+        <%= link_to "Registrar-se", new_user_registration_path %> |
+        <%= link_to "Login", new_user_session_path %>
+     <% end %>
+</div>
+
+<div>
+<%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
+<%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
+<%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="dash-menu col-2">
+            <h2>PensionApp</h2>
+                <ul class="container-fluid">
+                    <li><%= link_to '  Dashboard', homepage_path, class: "icon-home" %></li>
+                    <li><%= link_to '  Quadro de Tarefas', tasks_path, class: "icon-calendar" %></li>
+                    <li><%= link_to '  Área do Proprietário', proprietary_path, class: "icon-briefcase" %></li> 
+                </ul>
+        </div>
+        
+        <div class="col-10">
+            <div class="container dash-content">
+                <div class="row">
+                    <%= yield %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

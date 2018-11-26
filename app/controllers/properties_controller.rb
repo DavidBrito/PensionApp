@@ -1,6 +1,7 @@
 class PropertiesController < ApplicationController
   before_action :set_property, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  layout "dashboard"
   # GET /properties
   # GET /properties.json
   def index

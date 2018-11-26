@@ -1,37 +1,39 @@
-<div class="tasks-cadastro">
-    <%= form_for(@task) do |f| %>
-      <% if @task.errors.any? %>
-        <div id="error_explanation">
-          <h2> 
-             <%= pluralize(@task.errors.count, 'erro') %>
-             <%= pluralize(@task.errors.count, 'Encontrado', 'Encontrados') %>
-          </h2>
-    
-          <ul>
-          <% @task.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
-    
-      <div class="field cadastro-field">
-        <%= f.label :title %><br>
-        <%= f.text_field :title %>
-      </div>
-      
-      <div class="field cadastro-field">
-        <%= f.label :description %><br>
-        <%= f.text_field :description %>
-      </div>
-      
-      <div class="field cadastro-field">
-        <%= f.label :delegated %><br>
-        <%= f.collection_select(:delegated, User.all, :id, :name, {:include_blank => "Selecione uma pessoa"}, {id: "delegated_select", class: "form-control"}) %>            
-      </div>
+<div class="tasks-cadastro col-6 offset-3">
+    <div class="col-12">
+        <%= form_for(@task) do |f| %>
+          <% if @task.errors.any? %>
+            <div id="error_explanation">
+              <h2> 
+                 <%= pluralize(@task.errors.count, 'erro') %>
+                 <%= pluralize(@task.errors.count, 'Encontrado', 'Encontrados') %>
+              </h2>
         
-      <div class="actions">
-        <%= f.submit "Criar Tarefa", class: "btn btn-success" %>
-      </div>
-    <% end %>
+              <ul>
+              <% @task.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+        
+          <div class="field cadastro-field">
+            <%= f.label :title %><br>
+            <%= f.text_field :title %>
+          </div>
+          
+          <div class="field cadastro-field">
+            <%= f.label :description %><br>
+            <%= f.text_field :description %>
+          </div>
+          
+          <div class="field cadastro-field">
+            <%= f.label :delegated %><br>
+            <%= f.collection_select(:delegated, User.all, :id, :name, {:include_blank => "Selecione uma pessoa"}, {id: "delegated_select", class: "form-control"}) %>            
+          </div>
+            
+          <div class="actions">
+            <%= f.submit "Criar Tarefa", class: "btn btn-success" %>
+          </div>
+        <% end %>
+    </div>
 </div>

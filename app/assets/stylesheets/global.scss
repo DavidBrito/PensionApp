@@ -1,4 +1,24 @@
 // css global do sistema
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.dash-paragrafo {
+   color:#707070;
+}
+
+.dash-title {
+    margin-bottom: 15px;
+    width:100%;
+}
+
+.btn-primary, .btn-danger, .btn-success, .btn-info {
+    color:#fff !important;
+}
+
+.btn-light {
+    margin-left: 5px;    
+}
 
 #flash_error {
     background: #F8D7DA;
