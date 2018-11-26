@@ -17,13 +17,13 @@
   <tbody>
     <% @employees.each do |employee| %>
       <tr>
-        <td><%= employee.id %></td>
-        <td><%= employee.first_name %></td>
-        <td><%= employee.last_name %></td>
-        <td><%= employee.cpf %></td>
-        <td><%= employee.contact %></td>
-        <td><%= link_to 'Editar', edit_employee_path(employee) %></td>
-        <td><%= link_to 'Deletar', employee, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+        <td id='id'><%= employee.id %></td>
+        <td id='first_name'><%= employee.first_name %></td>
+        <td id='last_name'><%= employee.last_name %></td>
+        <td id='cpf'><%= employee.cpf %></td>
+        <td id='contact'><%= employee.contact %></td>
+        <td><%= link_to 'Editar', edit_employee_path(employee), id: 'edit' %></td>
+        <td><%= link_to 'Deletar', employee, method: :delete, data: { confirm: 'Tem certeza?' }, id: 'delete' %></td>
       </tr>
     <% end %>
   </tbody>

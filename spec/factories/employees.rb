@@ -1,8 +1,9 @@
 FactoryBot.define do
+
   factory :employee do
-    first_name { "MyString" }
-    last_name { "MyString" }
-    cpf { "MyString" }
-    contact { "MyString" }
+    first_name { "Joel" }
+    last_name { "Soartes" }
+    cpf { generate :cpf }
+    contact { "24986553215" }
   end
 end
