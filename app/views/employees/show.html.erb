@@ -1,24 +1,29 @@
+
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong></strong>
-  <%= @employee.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @employee.last_name %>
-</p>
-
-<p>
-  <strong>Cpf:</strong>
-  <%= @employee.cpf %>
-</p>
-
-<p>
-  <strong>Contact:</strong>
-  <%= @employee.contact %>
-</p>
-
-<%= link_to 'Edit', edit_employee_path(@employee) %> |
-<%= link_to 'Back', employees_path %>
+<div class="tasks-cadastro col-6 offset-3">
+    <div class="col-12">
+        <p>
+          <strong></strong>
+          <%= @employee.first_name %>
+        </p>
+        
+        <p>
+          <strong>Last name:</strong>
+          <%= @employee.last_name %>
+        </p>
+        
+        <p>
+          <strong>Cpf:</strong>
+          <%= @employee.cpf %>
+        </p>
+        
+        <p>
+          <strong>Contact:</strong>
+          <%= @employee.contact %>
+        </p>
+        <div class="col-12 text-center mt-3">
+            <%= link_to 'Edit', edit_employee_path(@employee), class: "btn btn-primary btn-tasks" %> 
+            <%= link_to 'Back', employees_path, class: "btn btn-light btn-tasks" %>
+        </div>
+</div>
+</div>
