@@ -44,7 +44,7 @@ class MaintenancesController < ApplicationController
   # PATCH/PUT /maintenances/1.json
   def update
      
-    if ((not maintenance_params[:response].blank?) && (current_user.user_type = 'proprietary'))
+    if ((not maintenance_params[:response].blank?) && (current_user.user_type = 'proprietary') && @maintenance.status != 'closed')
       @maintenance.status = 1
     end
     

@@ -25,10 +25,9 @@
             <td class="delegated"><%= find_user_name(task.delegated) %></td>
             <td class="creation_date"><%= task.created_at.strftime('%d-%m-%Y') %></td>
             <td class="status"><%= task.status %></td>
-            
-            <td class="bg-none"><% if task.status == 'uncompleted' && (current_user.id == task.owner_id || current_user.id == task.delegated) %>
-                <%= link_to 'Concluir', completed_task_path(task), method: :put , id: 'complete'  %>
-                <% end %></td>
+            <% if (task.status == 'uncompleted' && (current_user.id == task.owner_id || current_user.id == task.delegated)) %>
+            <td class="bg-none"><%= link_to 'Concluir', completed_task_path(task), method: :put , id: 'complete'  %></td>
+            <% end %>
             <td class="bg-none"><%= link_to 'Mostrar', task, class: "btn btn-info" %></td>
             <td class="bg-none"><%= link_to 'Editar', edit_task_path(task), class: "btn btn-primary" %></td>
             <td class="bg-none"><%= link_to 'Destruir', task, method: :delete, data: { confirm: 'Tem certeza?' }, class: "btn btn-danger" %></td>
@@ -36,9 +35,8 @@
         <% end %>
       </tbody>
     </table>
-    <% end %>
   </div>
-<%= link_to 'Nova Tarefa', new_task_path, class: "btn btn-primary" %>
+<p><%= link_to 'Nova Tarefa', new_task_path, class: "btn btn-primary" %><p>
 <br>
-<%= link_to 'Voltar', homepage_path %>
+<p><%= link_to 'Voltar', homepage_path %><p>
 </div>
