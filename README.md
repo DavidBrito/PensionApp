@@ -2,7 +2,7 @@
 Projeto da disciplina de de Engenharia de Software [IF977] do curso de Sistemas de Informação do Centro de Informática da UFPE.
 
 **Link da aplicação:** https://pension-app.herokuapp.com/  
-**Screencast:**
+**Screencast:** https://www.youtube.com/watch?v=yCWiDadtbo8&feature=youtu.be
 
 #### **Equipe:**
 
