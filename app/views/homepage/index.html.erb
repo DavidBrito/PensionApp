@@ -12,7 +12,7 @@
             <% if current_user.user_type == 'tenant' %>
                 <h2>Quadro de Chamadas de Manutenção <h2>
                 <p class="dash-paragrafo">Para Criar, Editar e Excluir chamadas de manutenção clique no link a seguir.</p>
-                <p><%= link_to 'Quadro de manutenção', maintenances_path %></p>
+                <p><%= link_to 'Quadro de manutenção', maintenances_path, class: "btn btn-primary btn-tasks" %></p>
             <% end %>
            
             <% if current_user.user_type == 'proprietary' %>

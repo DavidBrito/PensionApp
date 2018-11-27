@@ -40,7 +40,12 @@
                 <ul class="container-fluid">
                     <li><%= link_to '  Dashboard', homepage_path, class: "icon-home" %></li>
                     <li><%= link_to '  Quadro de Tarefas', tasks_path, class: "icon-calendar" %></li>
+                    <% if current_user.user_type == 'tenant' %>
+                    <li><%= link_to '  Quadro de manutenção', maintenances_path, class: "icon-briefcase" %></li> 
+                     <% end %>
+                     <% if current_user.user_type == 'proprietary' %>
                     <li><%= link_to '  Área do Proprietário', proprietary_path, class: "icon-briefcase" %></li> 
+                     <% end %>
                 </ul>
         </div>
         
