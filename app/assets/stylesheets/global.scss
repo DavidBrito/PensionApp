@@ -1,4 +1,13 @@
 // css global do sistema
+select {
+    border: 0.5px  solid #ccc;
+    height: 35px;
+    background: #F4F8F7;  
+    border-radius: 3px;
+    padding: 0 10px;
+    width: 50%;
+}
+
 body {
     font-family: 'Noto Sans TC', sans-serif !important;
 }
