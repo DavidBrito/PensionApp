@@ -1,39 +1,44 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @property.name %>
-</p>
-
-<p>
-  <strong>Código postal:</strong>
-  <%= @property.postal_code %>
-</p>
-
-<p>
-  <strong>Logradouro:</strong>
-  <%= @property.address %>
-</p>
-
-<p>
-  <strong>Número:</strong>
-  <%= @property.number %>
-</p>
-
-<p>
-  <strong>Cidade:</strong>
-  <%= @property.city %>
-</p>
-
-<p>
-  <strong>Estado:</strong>
-  <%= @property.state %>
-</p>
-
-<p>
-  <strong>Proprietário:</strong>
-  <%= find_user_name(@property.proprietary_id) %>
-</p>
-
-<%= link_to 'Editar', edit_property_path(@property) %> |
-<%= link_to 'Voltar', properties_path %>
+<div class="tasks-cadastro col-6 offset-3">
+    <div class="col-12">
+        <p id="notice"><%= notice %></p>
+        <p>
+          <strong>Nome:</strong>
+          <%= @property.name %>
+        </p>
+        
+        <p>
+          <strong>Código postal:</strong>
+          <%= @property.postal_code %>
+        </p>
+        
+        <p>
+          <strong>Logradouro:</strong>
+          <%= @property.address %>
+        </p>
+        
+        <p>
+          <strong>Número:</strong>
+          <%= @property.number %>
+        </p>
+        
+        <p>
+          <strong>Cidade:</strong>
+          <%= @property.city %>
+        </p>
+        
+        <p>
+          <strong>Estado:</strong>
+          <%= @property.state %>
+        </p>
+        
+        <p>
+          <strong>Proprietário:</strong>
+          <%= find_user_name(@property.proprietary_id) %>
+        </p>
+        <div class="col-12 text-center mt-3">
+            <%= link_to 'Editar', edit_property_path(@property), class: "btn btn-primary btn-tasks" %> 
+            <%= link_to 'Voltar', properties_path, class: "btn btn-light btn-tasks" %>
+        </div>
+    </div>
+</div>

@@ -1,24 +1,28 @@
-<h3> Visualizar Usuário <h3>
-
-<p>
-  <strong>Nome:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Cpf:</strong>
-  <%= @user.cpf %>
-</p>
-
-<p>
-  <strong>Tipo de usuário:</strong>
-  <%= @user.user_type %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Editar', edit_user_path(@user) %> |
-<%= link_to 'Voltar', users_path %>
+<h3 class="text-center col-12"> Visualizar Usuário </h3>
+<div class="tasks-cadastro col-6 offset-3">
+    <div class="col-12">
+        <p>
+          <strong>Nome:</strong>
+          <%= @user.name %>
+        </p>
+        
+        <p>
+          <strong>Cpf:</strong>
+          <%= @user.cpf %>
+        </p>
+        
+        <p>
+          <strong>Tipo de usuário:</strong>
+          <%= @user.user_type %>
+        </p>
+        
+        <p>
+          <strong>Email:</strong>
+          <%= @user.email %>
+        </p>
+        <div class="col-12 text-center mt-3">
+            <%= link_to 'Editar', edit_user_path(@user), class: "btn btn-primary btn-tasks" %> 
+            <%= link_to 'Voltar', users_path, class: "btn btn-light btn-tasks" %>
+        </div>
+    </div>
+</div>

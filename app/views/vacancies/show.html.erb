@@ -1,23 +1,28 @@
-<div class="col-12">
-<p>
-  <strong>Valor:</strong>
-  <%= @vacancy.value %>
-</p>
 
-<p>
-  <strong>Estado:</strong>
-  <%= @vacancy.status %>
-</p>
-
-<p>
-  <strong>Quarto:</strong>
-  <%= @vacancy.room_id %>
-</p>
-
-<p>
-  <strong>Ocupante:</strong>
-  <%= @vacancy.user_id %>
-</p>
+<div class="tasks-cadastro col-6 offset-3">
+        <p>
+          <strong>Valor:</strong>
+          <%= @vacancy.value %>
+        </p>
+        
+        <p>
+          <strong>Estado:</strong>
+          <%= @vacancy.status %>
+        </p>
+        
+        <p>
+          <strong>Quarto:</strong>
+          <%= @vacancy.room_id %>
+        </p>
+        
+        <p>
+          <strong>Ocupante:</strong>
+          <%= @vacancy.user_id %>
+        </p>
+        <div class="col-12 text-center mt-3">
+            <%= link_to 'Editar', edit_vacancy_path(@vacancy), class: "btn btn-primary btn-tasks" %> 
+            <%= link_to 'Voltar', properties_path, class: "btn btn-light btn-tasks" %> 
+        </div>
+    </div>
 </div>
-<%= link_to 'Editar', edit_vacancy_path(@vacancy) %> |
-<%= link_to 'Voltar', properties_path %> 
+

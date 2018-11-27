@@ -1,6 +1,8 @@
-<h1>Editar Chamado de Manutenção</h1>
+<h1 class="col-12 text-center">Editar Chamado de Manutenção</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Visualizar', @maintenance %> |
-<%= link_to 'Voltar', maintenances_path %>
+<div class="col-12 text-center mt-3">
+    <%= link_to 'Visualizar', @maintenance, class: "btn btn-info" %> 
+    <%= link_to 'Voltar', maintenances_path, class: "btn btn-light " %>
+</div>

@@ -1,14 +1,19 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Número:</strong>
-  <%= @room.number %>
-</p>
-
-<p>
-  <strong>Nome propriedade:</strong>
-  <%= find_property_name(@room.property_id) %>
-</p>
-
-<%= link_to 'Editar', edit_room_path(@room) %> |
-<%= link_to 'Voltar', properties_path %>
+<div class="tasks-cadastro col-6 offset-3">
+    <div class="col-12">
+        <p id="notice"><%= notice %></p>
+        
+        <p>
+          <strong>Número:</strong>
+          <%= @room.number %>
+        </p>
+        
+        <p>
+          <strong>Nome propriedade:</strong>
+          <%= find_property_name(@room.property_id) %>
+        </p>
+        <div class="col-12 text-center mt-3">
+            <%= link_to 'Editar', edit_room_path(@room), class: "btn btn-primary btn-tasks" %> 
+            <%= link_to 'Voltar', properties_path, class: "btn btn-light btn-tasks" %>
+        </div>
+    </div>
+</div>
