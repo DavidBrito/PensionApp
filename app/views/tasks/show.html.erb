@@ -1,35 +1,37 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Criador:</strong>
-  <%= find_user_name(@task.owner_id) %>
-</p>
-
-<p>
-  <strong>Título:</strong>
-  <%= @task.title %>
-</p>
-
-<p>
-  <strong>Descrição:</strong>
-  <%= @task.description %>
-</p>
-
-<p>
-  <strong>Data de criação:</strong>
-  <%= @task.created_at.strftime('%d-%m-%Y') %>
-</p>
-
-<p>
-  <strong>Delegado:</strong>
-  <%= find_user_name(@task.delegated) %>
-</p>
-
-<p>
-  <strong>Estado:</strong>
-  <%= @task.status %>
-</p>
-
-
-<%= link_to 'Editar', edit_task_path(@task) %> |
-<%= link_to 'Voltar', tasks_path %>
+<div class="tasks-cadastro col-6 offset-3">
+    <div class="col-12">
+        <p>
+          <strong>Criador:</strong>
+          <%= find_user_name(@task.owner_id) %>
+        </p>
+        
+        <p>
+          <strong>Título:</strong>
+          <%= @task.title %>
+        </p>
+        
+        <p>
+          <strong>Descrição:</strong>
+          <%= @task.description %>
+        </p>
+        
+        <p>
+          <strong>Data de criação:</strong>
+          <%= @task.created_at.strftime('%d-%m-%Y') %>
+        </p>
+        
+        <p>
+          <strong>Delegado:</strong>
+          <%= find_user_name(@task.delegated) %>
+        </p>
+        
+        <p>
+          <strong>Estado:</strong>
+          <%= @task.status %>
+        </p>
+        <div class="col-12 text-center mt-3">
+            <%= link_to 'Editar', edit_task_path(@task), class: "btn btn-primary btn-tasks" %> 
+            <%= link_to 'Voltar', tasks_path, class: "btn btn-light btn-tasks" %>
+        </div>
+  </div>
+</div>

@@ -1,26 +1,29 @@
-<%= form_for(@room) do |f| %>
-  <% if @room.errors.any? %>
-    <div id="error_explanation">
-      <h2> 
-         <%= pluralize(@room.errors.count, 'erro') %>
-      </h2>
-      <% @room.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="tasks-cadastro col-6 offset-3">
+    <div class="col-12">
+        <%= form_for(@room) do |f| %>
+          <% if @room.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@room.errors.count, 'erro') %></h2>
+              <ul>
+              <% @room.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+        
+          <div class="field cadastro-field">
+            <%= f.label 'Número' %><br>
+            <%= f.number_field :number %>
+          </div>
+          
+          <div class="field cadastro-field">
+            <%= f.label 'Propriedade' %><br>
+            <%= f.collection_select(:property_id, Property.all, :id, :name, {}, {id: "property_id_select"}) %>
+          </div>
+          <div class="actions">
+            <%= f.submit "Criar Quarto", class: "btn btn-success" %>
+          </div>
+        <% end %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label 'Número' %><br>
-    <%= f.number_field :number %>
-  </div>
-  
-  <div class="field">
-    <%= f.label 'Nome propriedade' %><br>
-    <%= f.collection_select(:property_id, Property.all, :id, :name, {}, {id: "property_id_select"}) %>
-  </div>
-  <div class="actions">
-    <%= f.submit 'Criar Quarto'  %>
-  </div>
-<% end %>
+</div>

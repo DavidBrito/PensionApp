@@ -1,6 +1,7 @@
 class MaintenancesController < ApplicationController
   before_action :set_maintenance, only: [:show, :edit, :update, :destroy, :completed]
   before_action :authenticate_user!
+  layout "dashboard"
   # GET /maintenances
   # GET /maintenances.json
   def index

@@ -1,9 +1,29 @@
-<h1>Homepage</h1>
-
-<p><%= link_to 'Quadro de tarefas', tasks_path %></p>
-   <% if current_user.user_type == 'tenant' %>
-     <p><%= link_to 'Quadro de manutenção', maintenances_path %></p>
-   <% end %>
-   <% if current_user.user_type == 'proprietary' %>
-     <p><%= link_to 'Área do proprietário', proprietary_path %></p>
-   <% end %>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-10">      
+            <h1 class="text-center">Bem-vindo ao Dashboard</h1>
+            
+            <div class="mt-5">
+                <h2>Quadro de Tarefas<h2>
+                <p class="dash-paragrafo">Para Criar, Editar e Excluir Taferas clique no link a seguir.</p>
+                <p><%= link_to 'Quadro de tarefas', tasks_path, class: "btn btn-primary btn-tasks" %></p>
+            </div>
+            
+            <% if current_user.user_type == 'tenant' %>
+                <h2>Quadro de Chamadas de Manutenção <h2>
+                <p class="dash-paragrafo">Para Criar, Editar e Excluir chamadas de manutenção clique no link a seguir.</p>
+                <p><%= link_to 'Quadro de manutenção', maintenances_path %></p>
+            <% end %>
+           
+            <% if current_user.user_type == 'proprietary' %>
+              <div class="mt-5">
+                <h2>Área do Prorpietário</h2>
+                  <p class="dash-paragrafo">Para ter acesso a todas as funcionalidades disponiveis para o proprietário, como administração
+                    de moradores, propriedades, empregados e chamada para manutenção clique no link a seguir.
+                  </p>
+                  <p><%= link_to 'Área do proprietário', proprietary_path, class: "btn btn-primary btn-tasks" %></p>
+             </div>
+            <% end %>
+        </div>
+    </div>
+</div>
