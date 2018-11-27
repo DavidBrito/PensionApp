@@ -42,3 +42,5 @@
 
 * Funcionalidades que parecem simples podem tomar mais tempo do que previsto  
 
+* Não deixar branch muito desatualizada em relação à master
+
