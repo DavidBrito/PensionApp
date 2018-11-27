@@ -13,12 +13,12 @@
           <% end %>
         
           <div class="field cadastro-field">
-            <%= f.label :number %><br>
+            <%= f.label 'Número' %><br>
             <%= f.number_field :number %>
           </div>
           
           <div class="field cadastro-field">
-            <%= f.label :property_id %><br>
+            <%= f.label 'Propriedade' %><br>
             <%= f.collection_select(:property_id, Property.all, :id, :name, {}, {id: "property_id_select"}) %>
           </div>
           <div class="actions">

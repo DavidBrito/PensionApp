@@ -24,11 +24,11 @@
                     <td><%= maintenance.response %></td>
                     <% if maintenance.status == 'in_progress' && current_user.user_type == 'proprietary' %>
                       
-                     <td><%= link_to 'Concluir', completed_maintenance_path(maintenance), method: :put , id: 'complete' %></td>
+                     <td><%= link_to 'Concluir', completed_maintenance_path(maintenance), method: :put , id: 'complete', class: "btn btn-success btn-tasks"git %></td>
                     
                     <% elsif  maintenance.status == 'open' && current_user.user_type == 'proprietary' %>
                      
-                       <td><%= link_to 'Concluir', '#' ,data: {confirm: 'Necessário responder antes de concluir' } %></td>
+                       <td><%= link_to 'Concluir', '#' ,data: {confirm: 'Necessário responder antes de concluir' }, class: "btn btn-success btn-tasks" %></td>
                     <% else %>
                       <td></td>
                     <% end %>
@@ -38,7 +38,7 @@
                       <td><%= link_to 'Editar', edit_maintenance_path(maintenance), id: 'edit', class: "btn btn-primary btn-tasks" %></td>
                     <% end %>
                      <% if current_user.user_type == 'proprietary' %>
-                      <td><%= link_to 'Responder', edit_maintenance_path(maintenance), id: 'response',  class: "btn btn-sucess btn-tasks" %></td>
+                      <td><%= link_to 'Responder', edit_maintenance_path(maintenance), id: 'response',  class: "btn btn-secondary btn-tasks" %></td>
                     <% end %>
                     <% if current_user.user_type == 'proprietary' || current_user.id == maintenance.owner_id %>
                     <td><%= link_to 'Deletar', maintenance, method: :delete, data: { confirm: 'Tem certeza?' }, id: 'delete', class: "btn btn-danger btn-tasks" %></td>
