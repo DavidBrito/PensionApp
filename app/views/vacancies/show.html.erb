@@ -19,10 +19,10 @@
         
         <p>
           <strong>Owner:</strong>
-          <%= @vacancy.vacancy_owner_id %>
+          <%= @vacancy.user_id %>
         </p>
         <div class="col-12 text-center mt-3">
-            <%= link_to 'Edit', edit_vacancy_path(@vacancy), class: "btn btn-primary btn-tasks" %> |
+            <%= link_to 'Edit', edit_vacancy_path(@vacancy), class: "btn btn-primary btn-tasks" %> 
             <%= link_to 'Voltar', properties_path, class: "btn btn-light btn-tasks" %> 
         </div>
     </div>

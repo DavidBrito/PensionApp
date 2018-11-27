@@ -27,7 +27,7 @@
           </div>
           <div class="field cadastro-field">
             <%= f.label :vacancy_owner_id %><br>
-            <%= f.collection_select(:vacancy_owner_id, User.where(user_type: 0), :id, :name, {include_blank: ""}, {id: "vacancy_select"}) %>
+            <%= f.collection_select(:user_id, User.where(user_type: 0), :id, :name, {include_blank: ""}, {id: "vacancy_select"}) %>
           </div>
           <div class="actions">
             <%= f.submit "Criar Vacancy", class: "btn btn-success" %>
