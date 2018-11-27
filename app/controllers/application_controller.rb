@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
     homepage_path
   end
   
+  def after_sign_out_path_for(resource_or_scope)
+    root_path
+  end
+  
   ## Para cada atributo do model user passado nas paginas do devise, permitir
   #  apenas aqueles configurados abaixo.
   
