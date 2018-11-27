@@ -14,23 +14,23 @@
           <% end %>
         
           <div class="field cadastro-field">
-            <%= f.label :value %><br>
+            <%= f.label 'Valor' %><br>
             <%= f.text_field :value %>
           </div>
           <div class="field cadastro-field">
-            <%= f.label :status %><br>
+            <%= f.label 'Estado' %><br>
             <%= f.select :status, Vacancy.statuses.keys.to_a %>
           </div>
           <div class="field cadastro-field">
-            <%= f.label :room_id %><br>
+            <%= f.label 'Número Quarto' %><br>
             <%= f.collection_select(:room_id, Room.all, :id, :number, {}, {id: "room_select"}) %>
           </div>
           <div class="field cadastro-field">
-            <%= f.label :vacancy_owner_id %><br>
-            <%= f.collection_select(:vacancy_owner_id, User.where(user_type: 0), :id, :name, {include_blank: ""}, {id: "vacancy_select"}) %>
+            <%= f.label 'Ocupante' %><br>
+            <%= f.collection_select(:user_id, User.where(user_type: 0), :id, :name, {include_blank: ""}, {id: "vacancy_select"}) %>
           </div>
           <div class="actions">
-            <%= f.submit "Criar Vacancy", class: "btn btn-success" %>
+            <%= f.submit "Criar Vaga", class: "btn btn-success" %>
           </div>
         <% end %>
     </div>
