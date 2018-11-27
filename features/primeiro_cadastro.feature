@@ -8,7 +8,7 @@ Contexto:
 
 Cenário: usuário quer fazer cadastro como proprietário, e consegue
   	 Dado que estou na pagina inicial do pensionapp
-  	 E clico em "Registrar-se"
+  	 E clico em "Cadastro usuário"
   	 Então devo ir para pagina de cadastro
   	 Quando preencho os dados corretamente como proprietário
   	 E clico em "Cadastrar"
@@ -17,7 +17,7 @@ Cenário: usuário quer fazer cadastro como proprietário, e consegue
 
 Cenário: usuário quer fazer cadastro como inquilino
     Dado que estou na pagina inicial do pensionapp
-	  E clico em "Registrar-se"
+	  E clico em "Cadastro usuário"
     Então devo ir para pagina de cadastro
     Quando preencho os dados corretamente como inquilino
     E clico em "Cadastrar"

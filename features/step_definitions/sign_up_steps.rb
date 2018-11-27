@@ -10,7 +10,7 @@ Quando("preencho os dados corretamente como proprietário") do
   fill_in("user[name]", with: 'teste1')
   fill_in("user[cpf]", with: '78945612312')
   fill_in("user[email]", with: 'test1@cin.ufpe.br')
-  find("#user_user_type").find(:xpath, 'option[1]').select_option
+  find("#user_user_type").find(:xpath, 'option[2]').select_option
   fill_in("user[password]", with: '456123')
   fill_in("user[password_confirmation]", with: '456123')
 end
@@ -19,7 +19,7 @@ Quando("preencho os dados corretamente como inquilino") do
   fill_in("user[name]", with: 'test2')
   fill_in("user[cpf]", with: '12345678978')
   fill_in("user[email]", with: 'test2@cin.ufpe.br')
-  find("#user_user_type").find(:xpath, 'option[2]').select_option
+  find("#user_user_type").find(:xpath, 'option[1]').select_option
   fill_in("user[password]", with: '456123')
   fill_in("user[password_confirmation]", with: '456123')
 end
@@ -29,9 +29,9 @@ Então("devo ir para pagina de usuario") do
 end
 
 Então("eu sou proprietário") do
-  next
+  expect(page).to have_content "Para ter acesso a todas as funcionalidades disponiveis para o proprietário"
 end
 
 Então("eu sou inquilino") do
-  next
+  expect(page).to have_content "Para Criar, Editar e Excluir chamadas de manutenção clique no link a seguir."
 end
