@@ -19,7 +19,7 @@
           </div>
           <div class="field cadastro-field">
             <%= f.label 'Descrição' %><br>
-            <%= f.text_area :description %>
+            <%= f.text_area :description, class: "form-control" %>
           </div>
           
           <div class="actions">
@@ -29,7 +29,7 @@
           <% else %>
             <div class="field cadastro-field">
             <%= f.label 'Resposta proprietário' %><br>
-            <%= f.text_area :response %>
+            <%= f.text_area :response, class: "form-control" %>
           </div>
           
           <div class="actions">
