@@ -24,7 +24,7 @@
                     <td><%= maintenance.response %></td>
                     <% if maintenance.status == 'in_progress' && current_user.user_type == 'proprietary' %>
                       
-                     <td><%= link_to 'Concluir', completed_maintenance_path(maintenance), method: :put , id: 'complete', class: "btn btn-success btn-tasks"git %></td>
+                     <td><%= link_to 'Concluir', completed_maintenance_path(maintenance), method: :put , id: 'complete', class: "btn btn-success btn-tasks" %></td>
                     
                     <% elsif  maintenance.status == 'open' && current_user.user_type == 'proprietary' %>
                      

@@ -46,7 +46,7 @@
           
           <div class="field cadastro-field">
             <%= f.label 'Proprietário' %><br>
-            <%= f.collection_select(:proprietary_id, User.where(user_type: 1), :id, :name, {}, {id: "proprietary_id_select"git}) %>            
+            <%= f.collection_select(:proprietary_id, User.where(user_type: 1), :id, :name, {}, {id: "proprietary_id_select"}) %>            
           </div>
           <div class="actions">
             <%= f.submit "Criar Propriedade", class: "btn btn-success" %>
