@@ -1,49 +1,18 @@
-# PostgreSQL. Versions 8.2 and up are supported.
-#
-# Install the pg driver:
-#   gem install pg
-# On OS X with Homebrew:
-#   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
-# On OS X with MacPorts:
-#   gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
-# On Windows:
-#   gem install pg
-#       Choose the win32 build.
-#       Install PostgreSQL and put its /bin directory on your path.
-#
-# Configure Using Gemfile
-# gem 'pg'
-#
 default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  username: postgres
-  password: pensionapp
+  adapter: oracle_enhanced
+  database: xe 
+  host: localhost/xe
+  port: 1524
 
-  
 development:
   <<: *default
-  database: pensionapp_development
-  host: localhost
-  port: 5432
-  
-  #schema_search_path: myapp,sharedapp,public
-
-  # Minimum log levels, in increasing order:
-  #min_messages: notice
+  username: dev_user
+  password: devuser
 
 test: &test
   <<: *default
-  database: pensionapp_test
-  host: localhost
-  port: 5432
-  
-production:
-  <<: *default
-  database: pensionapp_production
-  username: pensionapp
-  password: <%= ENV['PENSIONAPP_DATABASE_PASSWORD'] %>
+  username: test_user
+  password: testuser
 
 cucumber:
   <<: *test

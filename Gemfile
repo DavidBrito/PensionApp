@@ -13,7 +13,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Gems adicionadas por necessidade do projeto
 
 gem 'rails', '4.2.10'
-gem 'pg', '0.20'
+gem 'ruby-oci8'
+gem 'activerecord-oracle_enhanced-adapter', '~> 1.6.0'
 gem 'devise'
 gem 'rails-i18n', '~> 4.0'
 gem 'rails-assets-bootstrap', source: 'https://rails-assets.org'
